@@ -29,7 +29,7 @@ export default async function handler(
   const currentDate = new Date();
   return new Promise<void>((resolve, _) => {
     fetch(
-      `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=hi`,
+      `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=${process.env.RECAPTCHA_KEY}`,
       {
         method: 'POST',
         body: JSON.stringify({
