@@ -40,14 +40,17 @@ export default async function handler(
         }),
       }
     )
-      .then(async (recaptchaResponse) => {
-        const recaptchaResponseJson = await recaptchaResponse.json();
+      .then((recaptchaResponse) => {
         if (!recaptchaResponse.ok) {
-          throw new Error(JSON.stringify(recaptchaResponseJson));
+          throw new Error('recaptcha failure');
         } else {
-          return recaptchaResponseJson as RecaptchaResponse;
+          return recaptchaResponse;
         }
       })
+      .then((recaptchaResponse) => recaptchaResponse.json())
+      .then(
+        (recaptchaResponseJson) => recaptchaResponseJson as RecaptchaResponse
+      )
       .then((recaptchaResponse) => {
         if (
           recaptchaResponse.valid ||

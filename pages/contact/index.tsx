@@ -84,11 +84,10 @@ export default function IndexPage() {
             signal: abortController.current.signal,
           })
         )
-        .then(async (response) => {
+        .then((response) => {
           if (response.ok) {
             setSubmitState('success');
           } else {
-            console.log(await response.json());
             throw new Error();
           }
         })
