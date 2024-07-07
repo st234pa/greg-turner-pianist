@@ -3,6 +3,8 @@ import { google } from 'googleapis';
 
 type SubmitRequestBody = {
   token: string;
+  date: string;
+  time: string;
   name: string;
   email: string;
   zip: string;
@@ -26,7 +28,7 @@ export default async function handler(
   res: NextApiResponse<ResponseData>
 ) {
   const submitRequest = JSON.parse(req.body) as SubmitRequestBody;
-  const currentDate = new Date();
+
   return new Promise<void>((resolve, _) => {
     fetch(
       `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=${process.env.RECAPTCHA_KEY}`,
@@ -73,8 +75,8 @@ export default async function handler(
             requestBody: {
               values: [
                 [
-                  getDate(currentDate),
-                  getTime(currentDate),
+                  submitRequest.date,
+                  submitRequest.time,
                   submitRequest.name,
                   submitRequest.email,
                   submitRequest.zip,
@@ -97,12 +99,4 @@ export default async function handler(
         resolve();
       });
   });
-}
-
-function getDate(currentDate: Date) {
-  return `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
-}
-
-function getTime(currentDate: Date) {
-  return `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
 }

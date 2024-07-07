@@ -68,12 +68,15 @@ export default function IndexPage() {
     abortController.current = new AbortController();
     setSubmitState('inProgress');
     setErrorModalOpen(false);
+    const currentDate = new Date();
     executeRecaptcha &&
       executeRecaptcha('submit')
         .then((token: string) =>
           fetch('/api/submit', {
             method: 'POST',
             body: JSON.stringify({
+              date: getDate(currentDate),
+              time: getTime(currentDate),
               token,
               email,
               name,
@@ -403,4 +406,12 @@ function getAvailability(selectedTimeslots: Map<string, string[]>) {
   return Array.from(selectedTimeslots.entries())
     .map((entry) => `${entry[0].substring(0, 3)}: ${entry[1].join(', ')}`)
     .join('\n');
+}
+
+function getDate(currentDate: Date) {
+  return `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
+}
+
+function getTime(currentDate: Date) {
+  return `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
 }
