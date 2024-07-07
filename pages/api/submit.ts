@@ -17,7 +17,9 @@ type RecaptchaResponse = {
   };
 };
 
-type ResponseData = {};
+type ResponseData = {
+  error?: string;
+};
 
 export default async function handler(
   req: NextApiRequest,
@@ -81,7 +83,7 @@ export default async function handler(
             },
           });
         } else {
-          throw new Error();
+          throw new Error('Invalid recaptcha :(');
         }
       })
       .then(() => {
@@ -89,7 +91,7 @@ export default async function handler(
         resolve();
       })
       .catch((e) => {
-        res.status(400).end();
+        res.status(400).json({ error: e });
         resolve();
       });
   });
