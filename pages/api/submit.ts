@@ -29,7 +29,7 @@ export default async function handler(
   const currentDate = new Date();
   return new Promise<void>((resolve, _) => {
     fetch(
-      `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=${process.env.RECAPTCHA_KEY}`,
+      `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=hi`,
       {
         method: 'POST',
         body: JSON.stringify({
@@ -40,15 +40,14 @@ export default async function handler(
         }),
       }
     )
-      .then((recaptchaResponse) => {
+      .then(async (recaptchaResponse) => {
+        const recaptchaResponseJson = await recaptchaResponse.json();
         if (!recaptchaResponse.ok) {
-          throw new Error('recaptcha failed');
+          throw new Error(JSON.stringify(recaptchaResponseJson));
         } else {
-          return recaptchaResponse;
+          return recaptchaResponseJson as RecaptchaResponse;
         }
       })
-      .then((recaptchaResponse) => recaptchaResponse.json())
-      .then((recaptchaResponse) => recaptchaResponse as RecaptchaResponse)
       .then((recaptchaResponse) => {
         if (
           recaptchaResponse.valid ||
