@@ -1,0 +1,13 @@
+.services-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+@media (min-width: 640px) {
+    .services-summary {
+        display: grid;
+        gap: 96px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
