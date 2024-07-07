@@ -42,7 +42,7 @@ export default async function handler(
     )
       .then((recaptchaResponse) => {
         if (!recaptchaResponse.ok) {
-          throw new Error();
+          throw new Error('recaptcha failed');
         } else {
           return recaptchaResponse;
         }
