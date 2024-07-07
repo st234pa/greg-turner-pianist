@@ -38,6 +38,7 @@ export default function IndexPage() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [zip, setZip] = useState('');
+  const [notes, setNotes] = useState('');
 
   const [validationModalOpen, setValidationModalOpen] = useState(false);
   const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
@@ -77,6 +78,7 @@ export default function IndexPage() {
               email,
               name,
               zip,
+              notes,
               availability: getAvailability(selectedTimeSlots),
             }),
             signal: abortController.current.signal,
@@ -242,6 +244,8 @@ export default function IndexPage() {
           className="pb-7"
           label="Any questions, comments, or concerns?"
           isDisabled={submitting}
+          value={notes}
+          onValueChange={setNotes}
         />
         <Button
           color="primary"

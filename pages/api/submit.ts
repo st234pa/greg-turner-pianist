@@ -1,10 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { google } from 'googleapis';
 
 type SubmitRequestBody = {
   token: string;
   name: string;
   email: string;
   zip: string;
+  notes: string;
   availability: string;
 };
 
@@ -48,38 +50,39 @@ export default async function handler(
       .then((recaptchaResponse) => {
         if (
           recaptchaResponse.valid ||
-          recaptchaResponse.riskAnalysis.score > 0.5
+          recaptchaResponse.riskAnalysis.score >= 0.5
         ) {
-          return fetch(
-            `https://sheets.googleapis.com/v4/spreadsheets/1OqJd30zaq04VIEfeGyrbDIVCRUUttsjBJZOTfRXZtek/values/'Signups'!A1:F1:append?valueInputOption=USER_ENTERED`,
-            {
-              method: 'POST',
-              body: JSON.stringify({
-                range: `'Signups'!A1:F1`,
-                majorDimension: 'ROWS',
-                values: [
-                  [
-                    getDate(currentDate),
-                    getTime(currentDate),
-                    submitRequest.name,
-                    submitRequest.email,
-                    submitRequest.zip,
-                    submitRequest.availability,
-                  ],
-                ],
-              }),
-            }
+          const scopes = ['https://www.googleapis.com/auth/spreadsheets'];
+          const jwt = new google.auth.JWT(
+            process.env.SERVICE_ACCOUNT_EMAIL,
+            undefined,
+            // we need to replace the escaped newline characters
+            // https://stackoverflow.com/questions/50299329/node-js-firebase-service-account-private-key-wont-parse
+            process.env.SERVICE_ACCOUNT_PRIVATE_KEY!.replace(/\\n/g, '\n'),
+            scopes
           );
+          const sheets = google.sheets({ version: 'v4', auth: jwt });
+          return sheets.spreadsheets.values.append({
+            spreadsheetId: '1OqJd30zaq04VIEfeGyrbDIVCRUUttsjBJZOTfRXZtek',
+            valueInputOption: 'USER_ENTERED',
+            range: `'Signups'!A1:F1`,
+            requestBody: {
+              values: [
+                [
+                  getDate(currentDate),
+                  getTime(currentDate),
+                  submitRequest.name,
+                  submitRequest.email,
+                  submitRequest.zip,
+                  submitRequest.notes,
+                  submitRequest.availability,
+                ],
+              ],
+            },
+          });
         } else {
           throw new Error();
         }
-      })
-      .then((sheetsResponse) => {
-        console.log(sheetsResponse);
-        if (!sheetsResponse.ok) {
-          throw new Error();
-        }
-        return sheetsResponse;
       })
       .then(() => {
         res.status(200).end();
@@ -93,7 +96,7 @@ export default async function handler(
 }
 
 function getDate(currentDate: Date) {
-  return `${currentDate.getDay()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
+  return `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
 }
 
 function getTime(currentDate: Date) {
