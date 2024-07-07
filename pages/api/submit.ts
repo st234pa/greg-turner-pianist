@@ -90,8 +90,8 @@ export default async function handler(
         res.status(200).end();
         resolve();
       })
-      .catch((e) => {
-        res.status(400).json({ error: e });
+      .catch((e: Error) => {
+        res.status(400).json({ error: e.message });
         resolve();
       });
   });
