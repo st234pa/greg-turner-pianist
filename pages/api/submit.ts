@@ -1,6 +1,4 @@
-export const runtime = 'edge';
-
-import type { NextRequest } from 'next/server';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 type SubmitRequestBody = {
   token: string;
@@ -17,85 +15,81 @@ type RecaptchaResponse = {
   };
 };
 
-export default async function handler(req: NextRequest) {
-  const submitRequest = (await req.json()) as SubmitRequestBody;
+type ResponseData = {};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseData>
+) {
+  const submitRequest = JSON.parse(req.body) as SubmitRequestBody;
   const currentDate = new Date();
-  return fetch(
-    `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=`,
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        event: {
-          token: submitRequest.token,
-          siteKey: '6LcClgQqAAAAACAEkhusFmItV5nv66CPXVXGncqg',
-        },
-      }),
-    }
-  )
-    .then((recaptchaResponse) => {
-      if (!recaptchaResponse.ok) {
-        throw new Error();
-      } else {
-        return recaptchaResponse;
+  return new Promise<void>((resolve, _) => {
+    fetch(
+      `https://recaptchaenterprise.googleapis.com/v1/projects/gregturnerpianis-1719090524884/assessments?key=${process.env.RECAPTCHA_KEY}`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          event: {
+            token: submitRequest.token,
+            siteKey: '6LcClgQqAAAAACAEkhusFmItV5nv66CPXVXGncqg',
+          },
+        }),
       }
-    })
-    .then((recaptchaResponse) => recaptchaResponse.json())
-    .then((recaptchaResponse) => recaptchaResponse as RecaptchaResponse)
-    .then((recaptchaResponse) => {
-      console.log(recaptchaResponse);
-      if (
-        recaptchaResponse.valid ||
-        recaptchaResponse.riskAnalysis.score > 0.5
-      ) {
-        return fetch(
-          `https://sheets.googleapis.com/v4/spreadsheets/1OqJd30zaq04VIEfeGyrbDIVCRUUttsjBJZOTfRXZtek/values/'Signups'!A1:F1:append?valueInputOption=USER_ENTERED`,
-          {
-            method: 'POST',
-            body: JSON.stringify({
-              range: `'Signups'!A1:F1`,
-              majorDimension: 'ROWS',
-              values: [
-                [
-                  getDate(currentDate),
-                  getTime(currentDate),
-                  submitRequest.name,
-                  submitRequest.email,
-                  submitRequest.zip,
-                  submitRequest.availability,
+    )
+      .then((recaptchaResponse) => {
+        if (!recaptchaResponse.ok) {
+          throw new Error();
+        } else {
+          return recaptchaResponse;
+        }
+      })
+      .then((recaptchaResponse) => recaptchaResponse.json())
+      .then((recaptchaResponse) => recaptchaResponse as RecaptchaResponse)
+      .then((recaptchaResponse) => {
+        if (
+          recaptchaResponse.valid ||
+          recaptchaResponse.riskAnalysis.score > 0.5
+        ) {
+          return fetch(
+            `https://sheets.googleapis.com/v4/spreadsheets/1OqJd30zaq04VIEfeGyrbDIVCRUUttsjBJZOTfRXZtek/values/'Signups'!A1:F1:append?valueInputOption=USER_ENTERED`,
+            {
+              method: 'POST',
+              body: JSON.stringify({
+                range: `'Signups'!A1:F1`,
+                majorDimension: 'ROWS',
+                values: [
+                  [
+                    getDate(currentDate),
+                    getTime(currentDate),
+                    submitRequest.name,
+                    submitRequest.email,
+                    submitRequest.zip,
+                    submitRequest.availability,
+                  ],
                 ],
-              ],
-            }),
-          }
-        );
-      } else {
-        throw new Error();
-      }
-    })
-    .then((sheetsResponse) => {
-      //   if (!sheetsResponse.ok) {
-      //     throw new Error();
-      //   }
-      return sheetsResponse;
-    })
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .then((response) => {
-      return new Response(JSON.stringify({}), {
-        status: 200,
-        headers: {
-          'content-type': 'application/json',
-        },
+              }),
+            }
+          );
+        } else {
+          throw new Error();
+        }
+      })
+      .then((sheetsResponse) => {
+        console.log(sheetsResponse);
+        if (!sheetsResponse.ok) {
+          throw new Error();
+        }
+        return sheetsResponse;
+      })
+      .then(() => {
+        res.status(200).end();
+        resolve();
+      })
+      .catch((e) => {
+        res.status(400).end();
+        resolve();
       });
-    })
-    .catch((e) => {
-      console.log('error: ', e);
-      return new Response(JSON.stringify({}), {
-        status: 400,
-        headers: {
-          'content-type': 'application/json',
-        },
-      });
-    });
+  });
 }
 
 function getDate(currentDate: Date) {

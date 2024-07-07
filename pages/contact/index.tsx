@@ -14,8 +14,6 @@ import {
 } from '@nextui-org/modal';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
-export const runtime = 'experimental-edge';
-
 const daysOfWeek = [
   'Sunday',
   'Monday',
