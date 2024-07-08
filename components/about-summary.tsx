@@ -52,6 +52,7 @@ export default function AboutSummary() {
             src="/greg_headshot.JPG"
             className="about-summary-image-blur"
             alt="Greg Turner headshot blurred"
+            priority
             width={1000000}
             height={1000000}
           />
@@ -59,6 +60,7 @@ export default function AboutSummary() {
             src="/greg_headshot.JPG"
             className="about-summary-image"
             alt="Greg Turner headshot"
+            priority
             width={1000000}
             height={1000000}
           />
