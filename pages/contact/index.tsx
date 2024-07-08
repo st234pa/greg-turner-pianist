@@ -1,9 +1,13 @@
 import DefaultLayout from '@/layouts/default';
 import Section from '@/layouts/section';
-import { Button } from '@nextui-org/button';
-import { CheckboxGroup, Checkbox } from '@nextui-org/checkbox';
-import { Input, Textarea } from '@nextui-org/input';
-import { Link } from '@nextui-org/link';
+import {
+  CheckboxGroup,
+  Checkbox,
+  Input,
+  Textarea,
+  Button,
+  Link,
+} from '@nextui-org/react';
 import { useEffect, useRef, useState } from 'react';
 import {
   Modal,
@@ -123,7 +127,7 @@ export default function IndexPage() {
         maxWidth={768}
         isFirst
       >
-        <div className="w-full pb-4">
+        <div className="w-full pb-4 pt-2">
           <h1 className="text-2xl pb-2">Request a trial lesson</h1>
           <p className="text-sm">
             Please provide your contact information, location, and availability.

@@ -1,16 +1,20 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Greg Turner",
-  description: "Pianist and educator",
+  name: 'Greg Turner',
+  description: 'Pianist and educator',
   navItems: [
     {
-      label: "About",
-      href: "/about",
+      label: 'About',
+      href: '/about',
     },
     {
-      label: "Services",
-      href: "/services",
+      label: 'Philosophy',
+      href: '/philosophy',
+    },
+    {
+      label: 'Pricing',
+      href: '/pricing',
     },
   ],
 };

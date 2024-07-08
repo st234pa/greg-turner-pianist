@@ -1,8 +1,7 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { EmailIcon, FacebookIcon, InstagramIcon, YoutubeIcon } from './icons';
-import { Divider } from '@nextui-org/divider';
+import { Divider, Link } from '@nextui-org/react';
 import Section from '@/layouts/section';
-import { Link } from '@nextui-org/link';
 
 export default function Footer() {
   return (

@@ -1,24 +1,24 @@
 import Section from '@/layouts/section';
-import { Link } from '@nextui-org/link';
+import { Link } from '@nextui-org/react';
 
 export default function ServicesSummary() {
   return (
     <Section>
       <div className="services-summary">
         <ServiceSummary
-          title="Performance"
-          blurb="I offer in-home private lessons for all levels, during which you can learn repertoire as well as technique."
-          anchor="performance"
+          title="Effective Teaching"
+          blurb="I model my teaching after my own experience studying with world-class teachers."
+          href="/philosophy"
         />
         <ServiceSummary
-          title="Theory"
-          blurb="I teach music theory classes that complement the performance curriculum."
-          anchor="theory"
+          title="Well-Rounded Curriculum"
+          blurb="I teach carefully selected repertoire based on my students' interests and capabilities, as well as technique, music theory and history. "
+          href="/philosophy#curriculum"
         />
         <ServiceSummary
-          title="History"
-          blurb="My music history class provides context for and insight into your repertoire."
-          anchor="history"
+          title="Fair Pricing"
+          blurb="I offer fair rates, and I accept multiple forms of payment &mdash; including cash, credit card, and AfterPay."
+          href="/pricing"
         />
       </div>
     </Section>
@@ -28,14 +28,14 @@ export default function ServicesSummary() {
 type ServiceSummaryProps = {
   title: string;
   blurb: string;
-  anchor: string;
+  href: string;
 };
 
-function ServiceSummary({ title, blurb, anchor }: ServiceSummaryProps) {
+function ServiceSummary({ title, blurb, href }: ServiceSummaryProps) {
   return (
     <div className="text-center">
       <Link
-        href={`services#${anchor}`}
+        href={href}
         showAnchorIcon
         className="text-xl pb-4 text-secondary"
       >

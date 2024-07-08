@@ -1,9 +1,15 @@
+import Image from 'next/image';
+
 export default function Splash() {
   return (
     <div className="splash-container">
-      <img
+      <Image
+        width={1000000}
+        priority
+        height={1000000}
         src="/greg_at_piano.png"
         className="splash"
+        alt="Greg Turner at piano"
       />
       <div className="splash-overlay" />
       <div className="splash-overlay-text">

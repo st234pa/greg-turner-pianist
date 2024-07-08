@@ -1,10 +1,11 @@
 .services-summary {
     display: flex;
     flex-direction: column;
+    padding-bottom: 48px;
     gap: 48px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
     .services-summary {
         display: grid;
         gap: 96px;
