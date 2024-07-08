@@ -128,7 +128,7 @@ export default function IndexPage() {
         isFirst
       >
         <div className="w-full pb-4 pt-2">
-          <h1 className="text-2xl pb-2">Request a trial lesson</h1>
+          <h1 className="text-2xl pb-2">Request a Trial Lesson</h1>
           <p className="text-sm">
             Please provide your contact information, location, and availability.
           </p>

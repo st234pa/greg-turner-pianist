@@ -29,7 +29,6 @@ export default function AboutSummary() {
                 color="default"
                 radius="full"
                 as={Link}
-                size="lg"
                 href="/about"
               >
                 Learn more
@@ -38,11 +37,10 @@ export default function AboutSummary() {
                 color="primary"
                 radius="full"
                 as={Link}
-                size="lg"
                 href="/contact"
                 className="sm:hidden"
               >
-                Contact
+                Request a Trial Lesson
               </Button>
             </div>
           </div>

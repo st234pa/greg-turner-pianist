@@ -5,11 +5,11 @@ export const siteConfig = {
   description: 'Pianist and educator',
   navItems: [
     {
-      label: 'About',
+      label: 'About Me',
       href: '/about',
     },
     {
-      label: 'Philosophy',
+      label: 'Teaching Philosophy',
       href: '/philosophy',
     },
     {
