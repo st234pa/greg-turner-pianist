@@ -31,14 +31,13 @@ export default function AboutSummary() {
                 as={Link}
                 href="/about"
               >
-                Learn more
+                Learn More
               </Button>
               <Button
                 color="primary"
                 radius="full"
                 as={Link}
                 href="/contact"
-                className="sm:hidden"
               >
                 Request a Trial Lesson
               </Button>
