@@ -228,7 +228,8 @@ export default function IndexPage() {
         <h1 className="text-3xl pb-2 py-4">Teaching Philosophy</h1>
         {/* <h1 className="text-3xl pb-2"></h1> */}
         <Accordion
-          itemClasses={{ title: 'text-md', content: 'text-default-400' }}
+          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          selectionMode="multiple"
         >
           {philosophyContent.map((item, index) => (
             <AccordionItem
@@ -243,7 +244,8 @@ export default function IndexPage() {
         <h1 className="text-2xl pt-4 pb-2">Curriculum</h1>
         <Accordion
           id="curriculum"
-          itemClasses={{ title: 'text-md', content: 'text-default-400' }}
+          selectionMode="multiple"
+          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
         >
           {lessonStructureContent.map((item, index) => (
             <AccordionItem
