@@ -10,13 +10,14 @@ import '@/styles/splash.css';
 import '@/styles/about.css';
 import '@/styles/about-summary.css';
 import '@/styles/services-summary.css';
+import '@/styles/brahms-video.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
     <NextUIProvider navigate={router.push}>
-      <NextThemesProvider>
+      <NextThemesProvider forcedTheme="light">
         <GoogleReCaptchaProvider reCaptchaKey="6LcClgQqAAAAACAEkhusFmItV5nv66CPXVXGncqg">
           <Component {...pageProps} />
         </GoogleReCaptchaProvider>

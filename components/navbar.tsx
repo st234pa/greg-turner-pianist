@@ -12,6 +12,7 @@ import {
 import { siteConfig } from '@/config/site';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { EmailIcon, FacebookIcon, InstagramIcon, YoutubeIcon } from './icons';
 
 export const Navbar = () => {
   const currentNav = usePathname();
@@ -19,7 +20,6 @@ export const Navbar = () => {
 
   return (
     <NextUINavbar
-      className="gap-0"
       maxWidth="xl"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -37,6 +37,12 @@ export const Navbar = () => {
         justify="center"
       >
         <Brand />
+      </NavbarContent>
+
+      <NavbarContent
+        className="hidden w-full lg:gap-12 sm:flex"
+        justify="center"
+      >
         {siteConfig.navItems.map((item) => (
           <NavbarItem key={item.href}>
             <NavLink
@@ -103,7 +109,7 @@ const Brand = (props: BrandProps) => {
         size="lg"
         className="font-bold"
       >
-        Greg Turner
+        Turner Piano Studio
       </Link>
     </NavbarBrand>
   );
