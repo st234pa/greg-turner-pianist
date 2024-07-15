@@ -7,11 +7,14 @@ export function BrahmsVideo() {
         <div className="video-wrap">
           <div className="video-container">
             <iframe
-              src="https://www.youtube.com/embed/DesVeqvQeqA?si=YaKeU4chzs_CAVOb"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/DesVeqvQeqA?si=yVknk-kP3zri5kr4"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-            />
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
