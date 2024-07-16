@@ -25,7 +25,7 @@ export const Navbar = () => {
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent
-        className="sm:hidden"
+        className="lg:hidden"
         justify="start"
       >
         <NavbarMenuToggle />
@@ -33,14 +33,14 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex"
+        className="hidden lg:flex"
         justify="center"
       >
         <Brand />
       </NavbarContent>
 
       <NavbarContent
-        className="hidden w-full lg:gap-12 sm:flex"
+        className="hidden w-full lg:gap-12 lg:flex"
         justify="center"
       >
         {siteConfig.navItems.map((item) => (
@@ -66,7 +66,7 @@ export const Navbar = () => {
             as={Link}
             href="/contact"
           >
-            Request a Trial Lesson
+            Request a FREE Trial Lesson
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -82,12 +82,12 @@ export const Navbar = () => {
             />
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem>
+        <NavbarMenuItem className="sm:hidden">
           <NavLink
             setIsMenuOpen={setIsMenuOpen}
             currentNav={currentNav}
             href="/contact"
-            label="Request a Trial Lesson"
+            label="Request a FREE Trial Lesson"
           />
         </NavbarMenuItem>
       </NavbarMenu>

@@ -13,7 +13,7 @@ export default function DefaultLayout({
     <div className="h-screen overflow-scroll">
       <Head />
       <Navbar />
-      <div className="min-h-[calc(100%-205px)] sm:min-h-[calc(100%-185px)]">
+      <div className="min-h-[calc(100%-554px)] sm:min-h-[calc(100%-362px)]">
         <UnderConstruction />
         {children}
       </div>

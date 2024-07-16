@@ -9,8 +9,8 @@ export default function AboutSummary() {
       <div className="about-summary pt-4">
         <div className="about-summary-text">
           <div>
-            <h1 className="font-light text-3xl lg:text-6xl">
-              In-home piano lessons in Jersey City and Hoboken
+            <h1 className="font-light text-3xl lg:text-5xl">
+              In-home piano lessons in Lower Manhattan and Jersey City
             </h1>
             <p className="text-lg lg:text-xl pt-6 pb-8">
               Hello! My name is Greg Turner. I received my Master's in Piano
@@ -25,7 +25,7 @@ export default function AboutSummary() {
               size="lg"
               href="/contact"
             >
-              Request a Trial Lesson
+              Request a FREE Trial Lesson
             </Button>
           </div>
         </div>

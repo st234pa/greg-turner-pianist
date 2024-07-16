@@ -79,26 +79,31 @@ export default function Footer() {
               size="sm"
               color="foreground"
             >
-              Request a Trial Lesson
+              Request a FREE Trial Lesson
             </Link>
           </div>
         </div>
       </div>
       <Divider className="mt-4" />
-      <div className="w-full pt-4 pb-2 text-sm text-default-400">
+      <div className="w-full pt-4 pb-2 text-tiny uppercase text-default-500">
+        Last updated July 15, 2024.
+      </div>
+      <div className="w-full pb-2 text-tiny text-default-500">
         This site is protected by reCAPTCHA and the Google{' '}
         <Link
-          size="sm"
           href="https://policies.google.com/privacy"
           color="secondary"
+          target="_blank"
+          className="text-tiny"
         >
           Privacy Policy
         </Link>{' '}
         and{' '}
         <Link
-          size="sm"
+          target="_blank"
           color="secondary"
           href="https://policies.google.com/terms"
+          className="text-tiny"
         >
           Terms of Service
         </Link>{' '}

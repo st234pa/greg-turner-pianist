@@ -1,6 +1,6 @@
 import DefaultLayout from '@/layouts/default';
 import Section from '@/layouts/section';
-import { Accordion, AccordionItem } from '@nextui-org/react';
+import { Accordion, AccordionItem, Link } from '@nextui-org/react';
 
 export default function IndexPage() {
   const philosophyContent = [
@@ -146,8 +146,17 @@ export default function IndexPage() {
             I've crafted my own personal book of over 50 various pieces for
             beginner to advanced students. Each one is annotated by me to
             describe the piece's value and ordered by level. I use this
-            collection as well as the well established and proven curriculum of
-            RCM to choose the perfect pieces for my students.
+            collection as well as the well established and proven curriculum
+            curated by{' '}
+            <Link
+              className="font-bold"
+              color="secondary"
+              target="_blank"
+              href="https://www.rcmusic.com/"
+            >
+              RCM
+            </Link>{' '}
+            to choose the perfect pieces for my students.
           </p>
           <p className="pb-2">
             When students are ready for a new piece, I give them 3 different
@@ -184,9 +193,8 @@ export default function IndexPage() {
             together.
           </p>
           <p className="pb-2">
-            To practice technique, my students do scales and arpeggios, as well
-            as exercises and etudes carefully chosen to improve specific weak
-            spots in their technique.
+            To practice technique, my students work on exercises such as scales
+            arpeggios, and carefully chosen etudes.
           </p>
         </div>
       ),
@@ -210,10 +218,18 @@ export default function IndexPage() {
             the pieces they play.
           </p>
           <p className="pb-2">
-            I use RCM’s curriculum for music theory and music history. It is a
-            well established curriculum that brings students beyond an
-            undergraduate level of theory and history by the time they finish
-            the program.
+            I use{' '}
+            <Link
+              className="font-bold"
+              color="secondary"
+              target="_blank"
+              href="https://www.rcmusic.com/"
+            >
+              RCM
+            </Link>
+            's curriculum for music theory and music history. It is a well
+            established curriculum that brings students beyond an undergraduate
+            level of theory and history by the time they finish the program.
           </p>
         </div>
       ),

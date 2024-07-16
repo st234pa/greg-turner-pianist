@@ -128,11 +128,11 @@ export default function IndexPage() {
         isFirst
       >
         <div className="w-full pb-4 pt-2">
-          <h1 className="text-2xl pb-2">Request a Trial Lesson</h1>
+          <h1 className="text-2xl pb-2">Request a FREE Trial Lesson</h1>
           <p className="text-sm">
             Please provide your contact information, location, and availability.
           </p>
-          <p className="text-sm text-default-400">
+          <p className="text-sm text-default-500">
             You can also reach me at{' '}
             <Link
               size="sm"
@@ -182,7 +182,7 @@ export default function IndexPage() {
           />
         </div>
         <CheckboxGroup
-          label="Which days are you available for lessons?"
+          label="Which days are you available for a trial lesson?"
           value={Array.from(selectedTimeSlots.keys())}
           className="pb-6"
           orientation="horizontal"
