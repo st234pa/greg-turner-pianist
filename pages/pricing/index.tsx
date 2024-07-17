@@ -1,5 +1,5 @@
-import DefaultLayout from '@/layouts/default';
-import Section from '@/layouts/section';
+import DefaultLayout from "@/layouts/default";
+import Section from "@/layouts/section";
 import {
   Tab,
   Tabs,
@@ -14,14 +14,14 @@ import {
   Button,
   ModalFooter,
   Link,
-} from '@nextui-org/react';
-import { ReactElement, useState } from 'react';
+} from "@nextui-org/react";
+import { ReactElement, useState } from "react";
 
 type Subscription = {
   title: string;
-  '60': number;
-  '45': number;
-  '30': number;
+  "60": number;
+  "45": number;
+  "30": number;
   highlight?: boolean;
   details: ReactElement;
 };
@@ -34,10 +34,10 @@ export default function IndexPage() {
 
   const subscriptions = [
     {
-      title: 'Single',
-      '60': 100,
-      '45': 79,
-      '30': 55,
+      title: "Single Lesson",
+      "60": 100,
+      "45": 79,
+      "30": 55,
       details: (
         <ul className="list-disc">
           <li>Pay for one lesson, minimal commitment!</li>
@@ -62,67 +62,80 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Month (4-5 lessons)',
-      '60': 90,
-      '45': 72,
-      '30': 50,
+      title: "Package of 5 Lessons",
+      "60": 90,
+      "45": 72,
+      "30": 50,
       details: (
         <ul className="list-disc">
-          <li>Fixed weekly time guaranteed!</li>
-          <li>Payment due on the 1st of the month.</li>
+          <li>This package offers five lessons.</li>
+          <li>Payment is due by the start of the first lesson.</li>
           <li>
-            Failure to make payment within 10 days will forfeit your time slot.
-          </li>
-          <li>One makeup per month is allowed.</li>
-          <li>
-            Makeups are allowed if I am notified of absence at least 24 hours
-            before the lesson time.
-          </li>
-          <li>
-            Makeups must be used within 30 days of original time and can not be
-            canceled or rescheduled again.
+            For these five lessons, you are given a fixed weekly lesson time for
+            five weeks plus one extra week to allow for one rescheduled lesson.
           </li>
           <li>
             There will be no refunds or makeups for lessons canceled within 24
             hours of the lesson time.
           </li>
           <li>
-            Students who wish to take more than their 4 or 5 scheduled lessons
-            for the month can do so at 15% off the monthly rate.
+            I will communicate any of my own planned absences at least two weeks
+            in advance. Those weeks will not be counted towards the six weeks
+            included in this package.
+          </li>
+          <li>
+            For any unexpected absences on my part, I will provide a refund or
+            lesson credit.
+          </li>
+          <li>
+            Package must be renewed before the last lesson of the package
+            (including missed lessons) to keep your lesson time for the next
+            package.
+          </li>
+          <li>
+            Students who wish to take more than their five scheduled lessons
+            within the six weeks of the package can do so at a discounted rate,
+            depending on availability.
           </li>
         </ul>
       ),
     },
     {
-      title: 'Semester (17 lessons)',
-      '60': 80,
-      '45': 64,
-      '30': 45,
+      title: "Package of 15 Lessons",
+      "60": 80,
+      "45": 64,
+      "30": 45,
       details: (
         <ul className="list-disc">
-          <li>Fixed weekly time guaranteed!</li>
-          <li>Fall semester dates: August 12, 2024 - December 20, 2024</li>
-          <li>Payment due on the first day of the semester.</li>
+          <li>This package offers 15 lessons.</li>
+          <li>Payment is due by the start of the first lesson.</li>
           <li>
-            Failure to make payment within 10 days will forfeit your time slot.
+            For these 15 lessons, you are given a fixed weekly lesson time for
+            15 weeks plus three extra weeks to allow for three rescheduled
+            lessons.
           </li>
-          <li>Four makeups per semester are allowed.</li>
-          <li>
-            Makeups are only allowed if I am notified of absence at least 24
-            hours before the lesson time.
-          </li>
-          <li>
-            Makeups must be used within 30 days of original time and can not be
-            canceled or rescheduled again.
-          </li>
-          <li>Makeup lessons MUST be completed within the same semester.</li>
           <li>
             There will be no refunds or makeups for lessons canceled within 24
             hours of the lesson time.
           </li>
           <li>
-            Students who wish to take more than their 17 scheduled lessons for
-            the semester can do so at 15% off the semesterly rate.
+            I will communicate any of my own planned absences at least two weeks
+            in advance. Those weeks will not be counted towards the 18 weeks
+            included in this package.
+          </li>
+          <li>
+            For any unexpected absences on my part, I will provide a refund or
+            lesson credit.
+          </li>
+          <li>
+            Package must be renewed before the last lesson of the package
+            (including missed lessons) to keep your lesson time for the next
+            package.
+          </li>
+          <li>
+            Students who wish to take more than their 15 scheduled lessons
+            within the 15 weeks of the package can do so at a discounted rate,
+            depending on availability.
           </li>
         </ul>
       ),
@@ -132,10 +145,7 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
-      <Section
-        isFirst
-        maxWidth={768}
-      >
+      <Section isFirst maxWidth={768}>
         <h1 className="pb-4 text-2xl">Pricing</h1>
         <div className="pb-6 pl-4">
           <ul className="list-disc">
@@ -171,21 +181,18 @@ export default function IndexPage() {
         </div>
         <div className="pt-6 sm:pt-2 flex flex-col-reverse sm:grid sm:grid-cols-3 gap-3 justify-center items-end">
           {subscriptions.map((subscription) => (
-            <div
-              key={subscription.title}
-              className="w-full"
-            >
+            <div key={subscription.title} className="w-full">
               {subscription.highlight && (
                 <div className="text-sm font-bold uppercase pb-1 text-right text-yellow-600">
                   Best Value!
                 </div>
               )}
               <div
-                className={`w-full rounded-2xl p-2 ${subscription.highlight ? 'border-yellow-600 border-2 ' : ''}`}
+                className={`w-full rounded-2xl p-2 ${subscription.highlight ? "border-yellow-600 border-2 " : ""}`}
               >
                 <Card
                   shadow="sm"
-                  className={`w-full sm:${subscription.highlight ? '' : 'mb-[2px]'}`}
+                  className={`w-full sm:${subscription.highlight ? "" : "mb-[2px]"}`}
                   isPressable
                   onPress={() => setSelectedSubscription(subscription)}
                 >
@@ -198,7 +205,7 @@ export default function IndexPage() {
                         $
                         {
                           subscription[
-                            selectedDuration.toString() as '30' | '45' | '60'
+                            selectedDuration.toString() as "30" | "45" | "60"
                           ]
                         }
                       </span>
@@ -231,9 +238,9 @@ export default function IndexPage() {
                   $
                   {selectedSubscription
                     ? selectedSubscription[
-                        selectedDuration.toString() as '30' | '45' | '60'
+                        selectedDuration.toString() as "30" | "45" | "60"
                       ]
-                    : ''}{' '}
+                    : ""}{" "}
                   for each {selectedDuration}-minute lesson
                 </p>
               </ModalHeader>
@@ -241,19 +248,10 @@ export default function IndexPage() {
                 <div className="px-4">{selectedSubscription?.details}</div>
               </ModalBody>
               <ModalFooter>
-                <Button
-                  color="danger"
-                  variant="light"
-                  onPress={onClose}
-                >
+                <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button
-                  color="primary"
-                  radius="full"
-                  as={Link}
-                  href="/contact"
-                >
+                <Button color="primary" radius="full" as={Link} href="/contact">
                   Request a FREE Trial Lesson
                 </Button>
               </ModalFooter>

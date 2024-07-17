@@ -1,47 +1,60 @@
-import DefaultLayout from '@/layouts/default';
-import Section from '@/layouts/section';
-import { Accordion, AccordionItem, Link } from '@nextui-org/react';
+import DefaultLayout from "@/layouts/default";
+import Section from "@/layouts/section";
+import { Accordion, AccordionItem, Link } from "@nextui-org/react";
 
 export default function IndexPage() {
   const philosophyContent = [
     {
-      title: 'Music is a path to personal growth and connection',
+      title: "Piano lessons should develop a students love for music",
       content: (
         <div>
           <p className="pb-2">
-            To me, learning to play an instrument is far more than just learning
-            how to move your fingers at the right time; it is about expressing
-            emotions, telling stories, and connecting deeply with the music and
-            your audience.
-          </p>
-          <p className="pb-2">
-            Through this process, my students learn to become not just better
-            musicians but more empathetic and productive people in general. They
-            learn to problem solve, learn efficiently, set goals, be
-            disciplined, and be focused. But most importantly, they learn to
-            love music and the music making process for the rest of their lives.
+            I understand that most people will not go into music as a career, so
+            my number one goal for all of my students is to develop in them a
+            love for music and the music making process that lasts them the rest
+            of their lives, and to give them the tools to make music fluently
+            and effortlessly.
           </p>
         </div>
       ),
     },
     {
-      title: 'High standards, high support',
+      title: "Music is a path to personal growth",
       content: (
         <div>
           <p className="pb-2">
-            The phrase high standards, high support, comes from David Yaeger, a
-            developmental psychologist who studies the science of motivating
-            young people. He has shown that the optimal learning environment is
-            one that combines high standards with high support.
+            When learning an instrument, one learns to problem solve, learn
+            efficiently, set goals, focus intently, and be disciplined.
           </p>
           <p className="pb-2">
-            Without the high standards, students never reach their potential.
-            Without the support, students learn to despise the lessons and
-            practice and often quit.
+            These are all skills that students will carry with them for the rest
+            of their lives far beyond the domain of music.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Music is a path to connection",
+      content: (
+        <div>
+          <p className="pb-2">
+            To me, learning to play an instrument is about expressing emotions,
+            telling stories, and connecting deeply with the music, the composer,
+            and your audience.
           </p>
           <p className="pb-2">
-            I strive to foster a high standards and high support environment.
+            My lessons include frequent discussions about the character and
+            emotions of pieces, and expressing these aspects is the number one
+            priority. Through this process, my students learn to become not just
+            better musicians but more empathetic people in general.
           </p>
+        </div>
+      ),
+    },
+    {
+      title: "A highly supportive environment is essentail",
+      content: (
+        <div>
           <p className="pb-2">
             Though every student progresses at their own pace, I truly believe
             every student is capable of being a master of their instrument. I
@@ -49,21 +62,32 @@ export default function IndexPage() {
             never degrade, shame, or yell at my students.
           </p>
           <p className="pb-2">
-            I also hold students to the highest standard they are capable of
-            being held to. If a standard is not being met, we discuss why and
-            strategies to reach it next time.
-          </p>
-          <p className="pb-2">
-            But high standards does not mean impossible standards. I don't
-            expect every student to play like Vladimir Horowitz or Lang Lang,
-            but if a student shows the drive and dedication to be held to that
-            standard or beyond, I will push them to reach that level.
+            I strive to create an environment where students feel safe,
+            confident, and comfortable to make mistakes, yet eager to fix them.
           </p>
         </div>
       ),
     },
     {
-      title: 'Practicing is an art that needs to be perfected',
+      title: "Students should be held to the highest standard they can be",
+      content: (
+        <div>
+          <p className="pb-2">
+            A highly supportive environment does not mean standards should drop.
+            But I also understand that everyone has a different standard they
+            should be held to. Expecting the impossible is a perfect way to make
+            a student feel incompetent, no matter how supportive you are.
+          </p>
+          <p className="pb-2">
+            With this in mind, I constantly adjust my standards with my students
+            and try to hold them to the highest standard they are capable of
+            being held to without being discouraged.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Practicing is an art that needs to be perfected",
       content: (
         <div>
           <p className="pb-2">
@@ -93,33 +117,21 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Piano expertise takes years to develop',
+      title: "Piano expertise takes years to develop",
       content: (
         <div>
+          <p className="pb-2">
+            Even the most talented pianists in the world work tirelessly to get
+            where they are. Lang Lang was known to practice up to 8 hours a day
+            as a child. Talent exists, but it is overrated. Hard work beats
+            talent when talent doesn't work. If you want to see results, you
+            must work hard, no matter who you are.
+          </p>
           <p className="pb-2">
             Anyone promising you that you'll be able to play Moonlight Sonata or
             Rondo Alla Turka in a month is lying to you or completely
             delusional. There is no such thing as mastering piano in a few
             lessons and any decent pianist will tell you this.
-          </p>
-          <p className="pb-2">
-            Even the most talented pianists in the world work tirelessly to get
-            where they are. For instance, as a child, Lang Lang was known to
-            practice up to eight hours a day; according to Yunchan Lim, he still
-            practices for twelve or more hours on Sundays.
-          </p>
-          <p className="pb-2">
-            Some students do progress faster with less time, but that has
-            everything to do with their interest and focus in their practice
-            &mdash; not some secret their teacher told them or some piano gene
-            informing them how to play.
-          </p>
-          <p className="pb-2">
-            In my studio, we embrace the value of hard work and smart work. If
-            you finished your assignment for the week in two practice days, the
-            takeaway isn't that you are talented (which may also be true), it's
-            that your assignment was too easy and the standards should be
-            raised.
           </p>
         </div>
       ),
@@ -127,27 +139,60 @@ export default function IndexPage() {
   ];
   const lessonStructureContent = [
     {
-      title: 'Repertoire',
+      title: "Refinement of Practice Strategies",
       content: (
         <div>
           <p className="pb-2">
-            Playing the right pieces is an essential part of making practice of
-            the instrument fun and rewarding. I know just how frustrating it can
-            be to work on something that is too difficult, and equally how
-            boring it can be to work on something that is too easy.
+            No one can reach their goals without effective practice strategies.
+            In my lessons, we focus extensively on practice methods, discussing
+            which strategies to use and how to allocate practice time
+            effectively. We also reflect on weekly practice sessions, with me
+            providing suggestions to refine the process continuously.
           </p>
           <p className="pb-2">
-            Knowing this, I take choosing the right repertoire very seriously
-            and approach it with great care. In my studio, I carefully select
-            pieces for my students that are within and just beyond their
-            ability, so at all times they feel capable but pushed to be better.
+            I sometimes ask students to record their practice sessions to ensure
+            they are practicing in a way that guarantees results. Through this
+            constant refinement, all my students develop confidence that their
+            dedicated practice time will yield tangible results.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Technique Training",
+      content: (
+        <div>
+          <p className="pb-2">
+            I’ve studied healthy and efficient piano techniques with some of the
+            world's greatest teachers at Juilliard and Eastman. I strive to pass
+            this knowledge to my students in an understandable way, ensuring
+            they can play at a high level without injury for life.
           </p>
           <p className="pb-2">
-            I've crafted my own personal book of over 50 various pieces for
-            beginner to advanced students. Each one is annotated by me to
-            describe the piece's value and ordered by level. I use this
-            collection as well as the well established and proven curriculum
-            curated by{' '}
+            My students practice scales, arpeggios, exercises, and etudes
+            carefully chosen to improve specific weak spots in their technique.
+            All of my technique discussions aim to achieve musical goals in our
+            pieces, with the understanding that good technique is only a means
+            to an end.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Carefully Selected Repertoire",
+      content: (
+        <div>
+          <p className="pb-2">
+            Selecting the right pieces is crucial for making piano practice fun
+            and rewarding. I understand the frustration of working on something
+            too difficult and the boredom of something too easy. Therefore, I
+            carefully select pieces that are within and just beyond my students'
+            abilities, ensuring they feel capable yet challenged.
+          </p>
+          <p className="pb-2">
+            I’ve created a personal collection of over 50 pieces for beginner to
+            advanced students, each annotated and ordered by level. I use this
+            along with the proven{" "}
             <Link
               className="font-bold"
               color="secondary"
@@ -155,70 +200,26 @@ export default function IndexPage() {
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
-            to choose the perfect pieces for my students.
-          </p>
-          <p className="pb-2">
-            When students are ready for a new piece, I give them 3 different
-            options, and they choose which they like the best. This gives the
-            student ownership over the piece, as well as a sense of
-            responsibility to finish it, motivating them to practice.
-          </p>
-          <p className="pb-2">
-            While we primarily focus on pieces from the western classical
-            tradition, I teach students music outside of this genre as well if
-            they so desire.
+            </Link>{" "}
+            curriculum. When students are ready for a new piece, I offer them
+            multiple options to choose from, giving them ownership and
+            motivation to practice.
           </p>
         </div>
       ),
     },
     {
-      title: 'Technique',
+      title: "Music Theory",
       content: (
         <div>
           <p className="pb-2">
-            I've spent years studying what it takes to have a healthy and
-            efficient technique with some of the greatest teachers in the world
-            at Juilliard and Eastman.
+            I incorporate music theory into my lessons. By learning how the
+            music is structured and why it sounds the way it does, students
+            enhance their appreciation for the pieces, as well as their
+            analytical skills.
           </p>
           <p className="pb-2">
-            I strive to pass the knowledge I gained from them down to my
-            students in a way they will understand so they will be able to play
-            piano at a high level without injury for the rest of their lives.
-          </p>
-          <p className="pb-2">
-            I understand that piano isn't just about good technique, it is about
-            making music. So, all discussions of technique I provide are in
-            service of achieving a musical goal in the pieces we work on
-            together.
-          </p>
-          <p className="pb-2">
-            To practice technique, my students work on exercises such as scales
-            arpeggios, and carefully chosen etudes.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: 'Theory and History',
-      content: (
-        <div>
-          <p className="pb-2">
-            My students learn music theory, music history, and ear training on
-            top of their piano studies.
-          </p>
-          <p className="pb-2">
-            By learning how the music is structured and why it sounds the way it
-            does, students enhance their appreciation for the pieces, as well as
-            their analytical skills.
-          </p>
-          <p className="pb-2">
-            By exploring the stories behind the music and learning about the
-            cultures that influenced it, students connect more personally with
-            the pieces they play.
-          </p>
-          <p className="pb-2">
-            I use{' '}
+            I use the{" "}
             <Link
               className="font-bold"
               color="secondary"
@@ -226,10 +227,49 @@ export default function IndexPage() {
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>
-            's curriculum for music theory and music history. It is a well
-            established curriculum that brings students beyond an undergraduate
-            level of theory and history by the time they finish the program.
+            </Link>{" "}
+            curriculum for music theory. This well established curriculum brings
+            students beyond an undergraduate level of music theory by the end of
+            the program.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Music History",
+      content: (
+        <div>
+          <p className="pb-2">
+            I incorporate music history into my lessons. By exploring the
+            stories behind the music and the cultures that influenced it,
+            students connect more personally with the pieces they play.
+          </p>
+          <p className="pb-2">
+            For advanced students, I use the{" "}
+            <Link
+              className="font-bold"
+              color="secondary"
+              target="_blank"
+              href="https://www.rcmusic.com/"
+            >
+              RCM
+            </Link>{" "}
+            curriculum for music history. It is a well established curriculum
+            that brings students beyond an undergraduate level history by the
+            time they finish the program.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Ear Training",
+      content: (
+        <div>
+          <p className="pb-2">
+            I teach my students the essentials of ear training that I learned at
+            Eastman and Juilliard. They will be trained to recognize pitches,
+            intervals, and chords, allowing them to better play by ear, and gain
+            a deeper understanding of the structure of the music they play.
           </p>
         </div>
       ),
@@ -237,14 +277,10 @@ export default function IndexPage() {
   ];
   return (
     <DefaultLayout>
-      <Section
-        maxWidth={768}
-        isFirst
-      >
-        <h1 className="text-3xl pb-2 py-4">Teaching Philosophy</h1>
-        {/* <h1 className="text-3xl pb-2"></h1> */}
+      <Section maxWidth={768} isFirst>
+        <h1 className="text-3xl py-4">Teaching Philosophy</h1>
         <Accordion
-          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          itemClasses={{ title: "text-md", content: "text-default-600" }}
           selectionMode="multiple"
         >
           {philosophyContent.map((item, index) => (
@@ -261,7 +297,7 @@ export default function IndexPage() {
         <Accordion
           id="curriculum"
           selectionMode="multiple"
-          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          itemClasses={{ title: "text-md", content: "text-default-600" }}
         >
           {lessonStructureContent.map((item, index) => (
             <AccordionItem
