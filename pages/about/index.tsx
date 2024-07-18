@@ -52,36 +52,42 @@ export default function IndexPage() {
               target="_blank"
               href="https://sites.uco.edu/cfad/academics/music/the-kuleshov/past-winners"
             >
-              Kuleshov International Piano Competition
-            </Link>
-            , third place in the{" "}
+              Kuleshov
+            </Link>{" "}
+            International Piano Competition, third place in the{" "}
             <Link
               className="font-normal"
               color="secondary"
               target="_blank"
               href="https://www.capevincentartscouncil.org/pianocompetitioninfo/2022competitionresults.html"
             >
-              Thousand Island International Piano Competition
-            </Link>
-            , and honorable mention at the{" "}
+              Thousand Islands
+            </Link>{" "}
+            International Piano Competition, and honorable mention at the{" "}
             <Link
               className="font-normal"
               color="secondary"
               target="_blank"
               href="https://www.facebook.com/GarciaPianoCompetition/posts/pfbid0P6knJRPMaJgNt6v6tvB6TA4SWhLNLAvuHaL4WVzhGr4rMcLqJKxKhtMK1FXqmZNzl?rdid=ozmDJA8i1MX4enYb"
             >
-              Marian Garcia International Piano Competition
-            </Link>
-            .
+              Marian Garcia
+            </Link>{" "}
+            International Piano Competition.
           </Paragraph>
           <Image
             src="/greg_at_carnegie_hall.jpg"
             alt="Greg Turner at Carnegie Hall"
             priority
-            className="object-cover my-4 rounded-[16px] max-h-[420px]"
+            className="object-cover mt-4 rounded-[16px] max-h-[420px]"
             width={1000000}
             height={1000000}
           />
+          <div className="text-center mt-1 mb-3">
+            <p className="text-sm font-light text-default-500">
+              From my performance at Carnegie Hall as a prize winner at the New
+              York Piano Competition and Festival
+            </p>
+          </div>
           <Paragraph isLast>
             By sharing the strategies and mindset I employed to perform at the
             highest level, I help my students develop the tools and mindset they
