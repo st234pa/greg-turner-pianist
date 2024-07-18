@@ -59,7 +59,7 @@ export default function IndexPage() {
           began to hold myself to the highest standard possible.
         </Paragraph>
         <Image
-          src="/greg_at_carnegie_hall.JPG"
+          src="/greg_at_carnegie_hall.jpg"
           alt="Greg Turner at Carnegie Hall"
           priority
           className="object-cover my-4 rounded-[16px] max-h-[420px]"
@@ -103,7 +103,7 @@ export default function IndexPage() {
             </Paragraph>
           </div>
           <Image
-            src="/greg_graduation.JPG"
+            src="/greg_graduation.jpg"
             alt="Greg Turner at graduation"
             priority
             className="object-cover h-[calc(100%-64px)] mb-4 rounded-[16px]"
