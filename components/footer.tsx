@@ -1,7 +1,7 @@
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from './icons';
-import { Divider, Link } from '@nextui-org/react';
-import Section from '@/layouts/section';
-import { siteConfig } from '@/config/site';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from "./icons";
+import { Divider, Link } from "@nextui-org/react";
+import Section from "@/layouts/section";
+import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
@@ -64,21 +64,13 @@ export default function Footer() {
           </h2>
           {siteConfig.navItems.map((navItem) => (
             <div key={navItem.href}>
-              <Link
-                href={navItem.href}
-                size="sm"
-                color="foreground"
-              >
+              <Link href={navItem.href} size="sm" color="foreground">
                 {navItem.label}
               </Link>
             </div>
           ))}
           <div>
-            <Link
-              href={'/contact'}
-              size="sm"
-              color="foreground"
-            >
+            <Link href={"/contact"} size="sm" color="foreground">
               Request a FREE Trial Lesson
             </Link>
           </div>
@@ -86,10 +78,10 @@ export default function Footer() {
       </div>
       <Divider className="mt-4" />
       <div className="w-full pt-4 pb-2 text-tiny uppercase text-default-500">
-        Last updated July 15, 2024.
+        Last updated July 18, 2024.
       </div>
       <div className="w-full pb-2 text-tiny text-default-500">
-        This site is protected by reCAPTCHA and the Google{' '}
+        This site is protected by reCAPTCHA and the Google{" "}
         <Link
           href="https://policies.google.com/privacy"
           color="secondary"
@@ -97,8 +89,8 @@ export default function Footer() {
           className="text-tiny"
         >
           Privacy Policy
-        </Link>{' '}
-        and{' '}
+        </Link>{" "}
+        and{" "}
         <Link
           target="_blank"
           color="secondary"
@@ -106,7 +98,7 @@ export default function Footer() {
           className="text-tiny"
         >
           Terms of Service
-        </Link>{' '}
+        </Link>{" "}
         apply.
       </div>
     </Section>
