@@ -40,23 +40,31 @@ export default function IndexPage() {
       "30": 55,
       details: (
         <ul className="list-disc">
-          <li>Pay for one lesson, minimal commitment!</li>
-          <li>One makeup per month is allowed.</li>
           <li>
-            Makeups are allowed if I am notified of absence at least 24 hours
-            before the lesson time.
+            This package offers one lesson, with no commitment to future
+            lessons.
+          </li>
+          <li>Payment is due by the start of the first lesson.</li>
+          <li>
+            This package does NOT guarantee you a weekly time. Scheduling is
+            done on a per lesson basis.
           </li>
           <li>
-            Makeups must be used within 30 days of original time and can not be
-            canceled or rescheduled again.
+            Students taking lessons using this package are allowed one
+            rescheduling per month.
           </li>
-          <li>Payment is due at the start of the lesson.</li>
           <li>
             There will be no refunds or makeups for lessons canceled within 24
             hours of the lesson time.
           </li>
           <li>
-            Weekly time slots are not guaranteed for this scheduling method.
+            I will communicate any of my own planned absences at least two weeks
+            in advance. Those weeks will not be counted towards the six weeks
+            included in this package.
+          </li>
+          <li>
+            For any unexpected absences on my part, I will provide a refund or
+            lesson credit.
           </li>
         </ul>
       ),
@@ -75,6 +83,11 @@ export default function IndexPage() {
             five weeks plus one extra week to allow for one rescheduled lesson.
           </li>
           <li>
+            Package must be renewed before the last lesson of the package
+            (including missed lessons) to keep your lesson time for the next
+            package.
+          </li>
+          <li>
             There will be no refunds or makeups for lessons canceled within 24
             hours of the lesson time.
           </li>
@@ -86,11 +99,6 @@ export default function IndexPage() {
           <li>
             For any unexpected absences on my part, I will provide a refund or
             lesson credit.
-          </li>
-          <li>
-            Package must be renewed before the last lesson of the package
-            (including missed lessons) to keep your lesson time for the next
-            package.
           </li>
           <li>
             Students who wish to take more than their five scheduled lessons
@@ -115,6 +123,11 @@ export default function IndexPage() {
             lessons.
           </li>
           <li>
+            Package must be renewed before the last lesson of the package
+            (including missed lessons) to keep your lesson time for the next
+            package.
+          </li>
+          <li>
             There will be no refunds or makeups for lessons canceled within 24
             hours of the lesson time.
           </li>
@@ -126,11 +139,6 @@ export default function IndexPage() {
           <li>
             For any unexpected absences on my part, I will provide a refund or
             lesson credit.
-          </li>
-          <li>
-            Package must be renewed before the last lesson of the package
-            (including missed lessons) to keep your lesson time for the next
-            package.
           </li>
           <li>
             Students who wish to take more than their 15 scheduled lessons
@@ -149,14 +157,14 @@ export default function IndexPage() {
         <h1 className="pb-4 text-2xl">Pricing</h1>
         <div className="pb-6 pl-4">
           <ul className="list-disc">
-            <li>30-Minute Lessons: Ideal for young beginners</li>
+            <li>30-Minute Lessons: Ideal for beginners aged 4-7.</li>
             <li>
-              45-Minute Lessons: ideal for intermediate beginners and teenage
-              beginners
+              45-Minute Lessons: Ideal for older children aged 8-12 or for
+              younger but more advanced students.
             </li>
             <li>
-              60-Minute Lessons: Best for intermediate and advanced students, as
-              well as adult students
+              60-Minute Lessons: Ideal for students 13 and older, or for younger
+              more advanced students.
             </li>
           </ul>
         </div>
