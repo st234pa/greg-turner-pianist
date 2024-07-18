@@ -63,7 +63,7 @@ export default function IndexPage() {
             >
               Thousand Island International Piano Competition
             </Link>
-            , and honorable mention at{" "}
+            , and honorable mention at the{" "}
             <Link
               className="font-normal"
               color="secondary"
