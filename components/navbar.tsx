@@ -109,7 +109,7 @@ const Brand = (props: BrandProps) => {
         size="lg"
         className="font-bold"
       >
-        Turner Piano Studio
+        Greg Turner Piano Studio
       </Link>
     </NavbarBrand>
   );

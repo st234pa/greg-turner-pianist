@@ -1,11 +1,11 @@
-import Section from "@/layouts/section";
-import { Link } from "@nextui-org/react";
-import { ReactElement } from "react";
+import Section from '@/layouts/section';
+import { Link } from '@nextui-org/react';
+import { ReactElement } from 'react';
 
 export default function ServicesSummary() {
   return (
     <Section>
-      <div className="services-summary">
+      <div className="services-summary font-light">
         <ServiceSummary
           title="Superior Training"
           blurb={
@@ -73,7 +73,11 @@ type ServiceSummaryProps = {
 function ServiceSummary({ title, blurb, href }: ServiceSummaryProps) {
   return (
     <div className="lg:text-center">
-      <Link href={href} showAnchorIcon className="text-2xl pb-4 text-secondary">
+      <Link
+        href={href}
+        showAnchorIcon
+        className="text-2xl pb-4 text-secondary"
+      >
         {title}
       </Link>
       {blurb}

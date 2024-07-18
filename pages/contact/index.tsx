@@ -108,7 +108,7 @@ export default function IndexPage() {
     return (
       <DefaultLayout>
         <Section
-          maxWidth={768}
+          maxWidth="max-w-4xl"
           isFirst
         >
           <div className="w-full pb-8">
@@ -124,15 +124,17 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <Section
-        maxWidth={768}
+        maxWidth="max-w-3xl"
         isFirst
       >
-        <div className="w-full pb-4 pt-2">
-          <h1 className="text-2xl pb-2">Request a FREE Trial Lesson</h1>
-          <p className="text-sm">
+        <div className="w-full pb-4">
+          <h1 className="text-3xl sm:text-4xl pb-4">
+            Request a FREE Trial Lesson
+          </h1>
+          <p className="text-sm font-light">
             Please provide your contact information, location, and availability.
           </p>
-          <p className="text-sm text-default-500">
+          <p className="text-sm text-default-600 font-light">
             You can also reach me at{' '}
             <Link
               size="sm"

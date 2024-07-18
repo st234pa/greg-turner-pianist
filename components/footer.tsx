@@ -9,7 +9,7 @@ export default function Footer() {
       <Divider className="mt-4" />
       <div className="w-full pt-4 lg:px-24 md:flex md:flex-row items-center gap-4 ">
         <h1 className="pb-3 sm:pb-0 text-2xl font-semibold flex-grow">
-          Turner Piano Studio
+          Greg Turner Piano Studio
         </h1>
         <div className="text-sm pb-4 sm:pb-0 md:pr-12">
           <h2 className="uppercase text-default-500 text-tiny pb-1">Contact</h2>
