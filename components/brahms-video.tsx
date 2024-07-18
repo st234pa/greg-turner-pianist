@@ -1,4 +1,4 @@
-import Section from '@/layouts/section';
+import Section from "@/layouts/section";
 
 export function BrahmsVideo() {
   return (
@@ -10,7 +10,7 @@ export function BrahmsVideo() {
               width="560"
               height="315"
               src="https://www.youtube.com/embed/DesVeqvQeqA?si=yVknk-kP3zri5kr4"
-              title="YouTube video player"
+              title="Greg Turner playing Brahms' Soanta number 3"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
