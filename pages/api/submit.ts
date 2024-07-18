@@ -7,6 +7,7 @@ type SubmitRequestBody = {
   time: string;
   name: string;
   email: string;
+  phone: string;
   zip: string;
   notes: string;
   availability: string;
@@ -71,7 +72,7 @@ export default async function handler(
           return sheets.spreadsheets.values.append({
             spreadsheetId: '1OqJd30zaq04VIEfeGyrbDIVCRUUttsjBJZOTfRXZtek',
             valueInputOption: 'USER_ENTERED',
-            range: `'Signups'!A1:F1`,
+            range: `'Signups'!A1:H1`,
             requestBody: {
               values: [
                 [
@@ -79,6 +80,7 @@ export default async function handler(
                   submitRequest.time,
                   submitRequest.name,
                   submitRequest.email,
+                  submitRequest.phone,
                   submitRequest.zip,
                   submitRequest.notes,
                   submitRequest.availability,

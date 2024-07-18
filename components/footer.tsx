@@ -18,9 +18,9 @@ export default function Footer() {
               size="sm"
               color="foreground"
               target="_blank"
-              href="mailto:gregturnerpianist@gmail.com"
+              href="mailto:gregturnerpianostudio@gmail.com"
             >
-              gregturnerpianist@gmail.com
+              gregturnerpianostudio@gmail.com
             </Link>
           </p>
           <p>

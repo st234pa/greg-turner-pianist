@@ -40,6 +40,7 @@ export default function IndexPage() {
     Map<string, string[]>
   >(new Map());
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [zip, setZip] = useState("");
   const [notes, setNotes] = useState("");
@@ -63,7 +64,9 @@ export default function IndexPage() {
     !email ||
     !name ||
     !zip ||
+    !phone ||
     isInvalidEmail(email) ||
+    isInvalidPhone(phone) ||
     isInvalidZip(zip) ||
     isInvalidTimeslots(selectedTimeSlots);
 
@@ -84,6 +87,7 @@ export default function IndexPage() {
               token,
               email,
               name,
+              phone,
               zip,
               notes,
               availability: getAvailability(selectedTimeSlots),
@@ -110,7 +114,7 @@ export default function IndexPage() {
         <Section maxWidth="max-w-4xl" isFirst>
           <div className="w-full pb-8">
             <h1 className="text-2xl pb-2">Thank you!</h1>
-            Your response has been submitted. I'll get back to you within 24
+            Your response has been submitted. I'll get back to you within 24-48
             hours.
           </div>
         </Section>
@@ -132,12 +136,16 @@ export default function IndexPage() {
             You can also reach me at{" "}
             <Link
               size="sm"
-              href="mailto:regturnerpianist@gmail.com"
+              href="mailto:gregturnerpianostudio@gmail.com"
               color="secondary"
             >
-              gregturnerpianist@gmail.com
+              gregturnerpianostudio@gmail.com
             </Link>{" "}
-            if you prefer! I will get back to you as soon as I can.
+            or call or text me at{" "}
+            <Link size="sm" href="tel:6465809160" color="secondary">
+              (646)-580-9160
+            </Link>{" "}
+            if you prefer! I will get back to you within 24-48 hours.
           </p>
         </div>
         <div className="w-full max-w-[400px] pb-4">
@@ -161,6 +169,18 @@ export default function IndexPage() {
             value={email}
             isInvalid={submitAttempted && isInvalidEmail(email)}
             errorMessage="Please enter a valid email"
+            isDisabled={submitting}
+          />
+        </div>
+        <div className="w-full max-w-[400px] pb-4">
+          <Input
+            type="tel"
+            label="Phone"
+            isRequired
+            onValueChange={setPhone}
+            value={phone}
+            isInvalid={submitAttempted && isInvalidPhone(phone)}
+            errorMessage="Please enter a valid phone number"
             isDisabled={submitting}
           />
         </div>
@@ -380,11 +400,15 @@ export default function IndexPage() {
 }
 
 function isInvalidEmail(value: string) {
-  return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]+/i) ? false : true;
+  return !value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]+/i);
+}
+
+function isInvalidPhone(value: string) {
+  return !value.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 }
 
 function isInvalidZip(value: string) {
-  return value.match(/^[0-9]{5}(?:-[0-9]{4})?$/i) ? false : true;
+  return !value.match(/^[0-9]{5}(?:-[0-9]{4})?$/i);
 }
 
 function isInvalidTimeslots(selectedTimeSlots: Map<string, string[]>) {

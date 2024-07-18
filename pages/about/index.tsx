@@ -1,6 +1,6 @@
 import DefaultLayout from "@/layouts/default";
 import Section from "@/layouts/section";
-import { Link } from "@nextui-org/react";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function IndexPage() {
@@ -9,14 +9,23 @@ export default function IndexPage() {
       <Section maxWidth="max-w-3xl" isFirst>
         <div className="text-3xl sm:text-4xl pb-4">About Me</div>
         <div className="md:grid md:grid-cols-5 md:gap-6 pb-5">
-          <Image
-            src="/greg_and_childhood_teacher.JPG"
-            alt="Greg Turner and Maria Mierelles"
-            priority
-            className="object-cover h-full rounded-[16px] md:col-span-2"
-            width={1000000}
-            height={1000000}
-          />
+          <div className="h-full md:col-span-2 md:flex md:flex-col">
+            <div className="md:flex-grow">
+              <Image
+                src="/greg_and_childhood_teacher.JPG"
+                alt="A picture of me and my first teacher, Maria Mierelles"
+                priority
+                className="object-cover rounded-[16px] md:h-full"
+                width={1000000}
+                height={1000000}
+              />
+            </div>
+            <div className="text-center mt-1">
+              <p className="text-sm font-light text-default-500">
+                Me and my first teacher, Maria Mierelles
+              </p>
+            </div>
+          </div>
           <div className="pt-4 md:pt-0 md:col-span-3">
             <Heading>
               My journey with the piano began at age ten, following Youtube
@@ -47,8 +56,7 @@ export default function IndexPage() {
           <Paragraph isLast>
             Some of these prizes include first place at the{" "}
             <Link
-              className="font-normal"
-              color="secondary"
+              className="font-normal text-secondary tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
               target="_blank"
               href="https://sites.uco.edu/cfad/academics/music/the-kuleshov/past-winners"
             >
@@ -56,8 +64,7 @@ export default function IndexPage() {
             </Link>{" "}
             International Piano Competition, third place in the{" "}
             <Link
-              className="font-normal"
-              color="secondary"
+              className="font-normal text-secondary tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
               target="_blank"
               href="https://www.capevincentartscouncil.org/pianocompetitioninfo/2022competitionresults.html"
             >
@@ -65,8 +72,7 @@ export default function IndexPage() {
             </Link>{" "}
             International Piano Competition, and honorable mention at the{" "}
             <Link
-              className="font-normal"
-              color="secondary"
+              className="font-normal text-secondary tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
               target="_blank"
               href="https://www.facebook.com/GarciaPianoCompetition/posts/pfbid0P6knJRPMaJgNt6v6tvB6TA4SWhLNLAvuHaL4WVzhGr4rMcLqJKxKhtMK1FXqmZNzl?rdid=ozmDJA8i1MX4enYb"
             >
@@ -76,7 +82,8 @@ export default function IndexPage() {
           </Paragraph>
           <Image
             src="/greg_at_carnegie_hall.jpg"
-            alt="Greg Turner at Carnegie Hall"
+            alt="A picture of me from my performance at Carnegie Hall as a prize winner at the New
+              York Piano Competition and Festival"
             priority
             className="object-cover mt-4 rounded-[16px] max-h-[420px]"
             width={1000000}
@@ -113,14 +120,23 @@ export default function IndexPage() {
               skills.
             </Paragraph>
           </div>
-          <Image
-            src="/greg_graduation.jpg"
-            alt="Greg Turner at graduation"
-            priority
-            className="md:col-span-2 object-cover h-full rounded-[16px]"
-            width={1000000}
-            height={1000000}
-          />
+          <div className="h-full md:col-span-2 md:flex md:flex-col">
+            <div className="md:flex-grow">
+              <Image
+                src="/greg_graduation.JPG"
+                alt="A picture of me at Juilliard commencement"
+                priority
+                className="object-cover rounded-[16px] md:h-full"
+                width={1000000}
+                height={1000000}
+              />
+            </div>
+            <div className="text-center mt-1">
+              <p className="text-sm font-light text-default-500">
+                Me at Juilliard commencement
+              </p>
+            </div>
+          </div>
         </div>
       </Section>
     </DefaultLayout>
