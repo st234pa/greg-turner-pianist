@@ -10,12 +10,12 @@ export default function IndexPage() {
         isFirst
       >
         <div className="text-3xl sm:text-4xl pb-4">About Me</div>
-        <div className="md:grid md:grid-cols-5 md:gap-6">
+        <div className="md:grid md:grid-cols-5 md:gap-6 pb-5">
           <Image
             src="/greg_and_childhood_teacher.JPG"
             alt="Greg Turner and Maria Mierelles"
             priority
-            className="object-cover my-4 h-[calc(100%-40px)] rounded-[16px] md:col-span-2"
+            className="object-cover h-full rounded-[16px] md:col-span-2"
             width={1000000}
             height={1000000}
           />
@@ -35,7 +35,7 @@ export default function IndexPage() {
               Mierelles, who worked with me to build a strong technical
               foundation and effective practice habits.
             </Paragraph>
-            <Paragraph>
+            <Paragraph isLast>
               This experience has given me a better understanding of how to help
               my students improve in the early stages &mdash; I vividly remember
               the challenges I faced and the strategies I used to overcome them.
@@ -52,7 +52,7 @@ export default function IndexPage() {
           determined by the amount of time spent practicing, and the practice
           strategies employed.
         </Paragraph>
-        <Paragraph>
+        <Paragraph isLast>
           Taking this to heart, I became hungry to learn all that I could about
           the instrument. I read several books on piano performance, asked
           questions to the teachers around me whenever I had the chance, and
@@ -66,47 +66,47 @@ export default function IndexPage() {
           width={1000000}
           height={1000000}
         />
-        <Heading2>International competition experience</Heading2>
-        <Paragraph>
-          After years of dedication and hard work, I won prizes in major
-          international competitions, including the Thousand Island
-          International Piano Competition, Marian Garcia International Piano
-          Competition, and first prize at the Kuleshov International Piano
-          Competition, and I was admitted to both Eastman and Juilliard on
-          scholarship.
-        </Paragraph>
-        <Paragraph>
-          My own experience of working hard to achieve success in the
-          competitive piano world equips me with the knowledge and tools to
-          guide my students effectively. By sharing the strategies and mindset
-          required for high-level performance, I help my students develop the
-          tools and mentality they need to attain their highest goals.
-        </Paragraph>
-        <Heading1>I have spent years honing my teaching skills.</Heading1>
-
-        <div className="md:grid md:grid-cols-2 md:gap-6">
-          <div>
+        <div className="pb-5">
+          <Heading2>International competition experience</Heading2>
+          <Paragraph>
+            After years of dedication and hard work, I won prizes in major
+            international competitions, including the Thousand Island
+            International Piano Competition, Marian Garcia International Piano
+            Competition, and first prize at the Kuleshov International Piano
+            Competition, and I was admitted to both Eastman and Juilliard on
+            scholarship.
+          </Paragraph>
+          <Paragraph isLast>
+            My own experience of working hard to achieve success in the
+            competitive piano world equips me with the knowledge and tools to
+            guide my students effectively. By sharing the strategies and mindset
+            required for high-level performance, I help my students develop the
+            tools and mentality they need to attain their highest goals.
+          </Paragraph>
+        </div>
+        <div className="md:grid md:grid-cols-5 md:gap-6 pb-4">
+          <div className="md:col-span-3">
+            <Heading1>I have spent years honing my teaching skills.</Heading1>
             <Heading2>Studying the art of teaching</Heading2>
             <Paragraph>
-              At Juilliard and Eastman, I studied piano pedagogy (the art of
-              teaching) for 2 years. In these courses, I studied various topics
-              related to teaching, including the science of learning modalities,
-              the science of motivation, and strategies to communicate
-              effectively with various age groups.
+              At Juilliard and Eastman, I studied piano pedagogy for two years.
+              In these courses, I studied topics such as the science of learning
+              modalities, the science of motivation, and strategies to
+              communicate effectively with various age groups.
             </Paragraph>
-            <Paragraph>
+            <Paragraph isLast>
               In my Juilliard pedagogy courses, some of Juilliard's best
-              teachers observed my lessons and provided me with ample feedback
-              on how to improve. On my own time, I have spent countless hours
-              pouring through neuroscience studies, learning how the brain
-              learns motor movements.
+              teachers observed my lessons and provided me with constructive
+              feedback. On my own time, I have spent countless hours pouring
+              through neuroscience studies, learning how the brain learns motor
+              movements.
             </Paragraph>
           </div>
           <Image
             src="/greg_graduation.jpg"
             alt="Greg Turner at graduation"
             priority
-            className="object-cover h-[calc(100%-64px)] mb-4 rounded-[16px]"
+            className="md:col-span-2 object-cover h-full rounded-[16px]"
             width={1000000}
             height={1000000}
           />
@@ -131,13 +131,23 @@ export default function IndexPage() {
 }
 
 function Heading1({ children }: { children: string }) {
-  return <div className="text-3xl pt-2 pb-4">{children}</div>;
+  return <div className="text-3xl pb-4">{children}</div>;
 }
 
 function Heading2({ children }: { children: string }) {
-  return <div className="text-2xl pb-2 ">{children}</div>;
+  return <div className="text-2xl pb-2">{children}</div>;
 }
 
-function Paragraph({ children }: { children: string }) {
-  return <div className="pb-4 font-light text-default-600">{children}</div>;
+function Paragraph({
+  children,
+  isLast,
+}: {
+  children: string;
+  isLast?: boolean;
+}) {
+  return (
+    <div className={`${isLast ? '' : 'pb-4'} font-light text-default-600`}>
+      {children}
+    </div>
+  );
 }
