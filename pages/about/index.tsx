@@ -16,9 +16,9 @@ export default function IndexPage() {
             width={1000000}
             height={1000000}
           />
-          <div className="md:col-span-3">
+          <div className="pt-4 md:pt-0 md:col-span-3">
             <Heading2>
-              My journey with the piano began at age 10, following Youtube
+              My journey with the piano began at age ten, following Youtube
               tutorials to teach myself pieces such as Beethoven's Moonlight
               Sonata and Joplin's Maple Leaf Rag.
             </Heading2>
@@ -44,9 +44,9 @@ export default function IndexPage() {
           </Heading2>
           <Paragraph isLast>
             Some of these prizes include first place at the Kuleshov
-            International Piano, third place in Thousand Island International
-            Piano Competition, and honorable mention at Marian Garcia
-            International Piano Competition.
+            International Piano Competition, third place in Thousand Island
+            International Piano Competition, and honorable mention at Marian
+            Garcia International Piano Competition.
           </Paragraph>
           <Image
             src="/greg_at_carnegie_hall.jpg"
@@ -57,13 +57,13 @@ export default function IndexPage() {
             height={1000000}
           />
           <Paragraph isLast>
-            By sharing the strategies and mindset I learned to achieve
-            high-level performance, I help my students develop the tools and
-            mindset they need to attain their highest goals.
+            By sharing the strategies and mindset I employed to perform at the
+            highest level, I help my students develop the tools and mindset they
+            need to attain their goals.
           </Paragraph>
         </div>
         <div className="md:grid md:grid-cols-5 md:gap-6 pb-4">
-          <div className="md:col-span-3">
+          <div className="pb-4 md:col-span-3">
             <Heading2>
               I have studied pedagogy at Juilliard and Eastman and I have years
               of experience teaching students of all ages.
