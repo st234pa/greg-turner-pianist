@@ -17,11 +17,11 @@ export default function IndexPage() {
             height={1000000}
           />
           <div className="pt-4 md:pt-0 md:col-span-3">
-            <Heading2>
+            <Heading>
               My journey with the piano began at age ten, following Youtube
               tutorials to teach myself pieces such as Beethoven's Moonlight
               Sonata and Joplin's Maple Leaf Rag.
-            </Heading2>
+            </Heading>
             <Paragraph>
               A few months later I started taking formal lessons with Maria
               Mierelles, who came out of retirement to take me as a student. She
@@ -38,10 +38,10 @@ export default function IndexPage() {
           </div>
         </div>
         <div className="pb-5">
-          <Heading2>
+          <Heading>
             I have since won prizes in several major international competitions,
             and I was admitted to both Eastman and Juilliard on scholarship.
-          </Heading2>
+          </Heading>
           <Paragraph isLast>
             Some of these prizes include first place at the Kuleshov
             International Piano Competition, third place in Thousand Island
@@ -64,10 +64,10 @@ export default function IndexPage() {
         </div>
         <div className="md:grid md:grid-cols-5 md:gap-6 pb-4">
           <div className="pb-4 md:col-span-3">
-            <Heading2>
-              I have studied pedagogy at Juilliard and Eastman and I have years
+            <Heading>
+              I have studied pedagogy at Eastman and Juilliard, and I have years
               of experience teaching students of all ages.
-            </Heading2>
+            </Heading>
             <Paragraph>
               At Juilliard and Eastman, I took pedagogy courses on the science
               of learning modalities, the science of motivation, and strategies
@@ -95,11 +95,7 @@ export default function IndexPage() {
   );
 }
 
-function Heading1({ children }: { children: string }) {
-  return <div className="text-3xl pb-4">{children}</div>;
-}
-
-function Heading2({ children }: { children: string }) {
+function Heading({ children }: { children: string }) {
   return <div className="text-2xl pb-2">{children}</div>;
 }
 
