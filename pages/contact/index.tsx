@@ -110,8 +110,8 @@ export default function IndexPage() {
         <Section maxWidth="max-w-4xl" isFirst>
           <div className="w-full pb-8">
             <h1 className="text-2xl pb-2">Thank you!</h1>
-            Your response has been submitted. I'll get back to you as soon as I
-            can.
+            Your response has been submitted. I'll get back to you within 24
+            hours.
           </div>
         </Section>
       </DefaultLayout>
@@ -380,7 +380,7 @@ export default function IndexPage() {
 }
 
 function isInvalidEmail(value: string) {
-  return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i) ? false : true;
+  return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]+/i) ? false : true;
 }
 
 function isInvalidZip(value: string) {

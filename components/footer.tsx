@@ -28,9 +28,9 @@ export default function Footer() {
               size="sm"
               color="foreground"
               target="_blank"
-              href="tel:2482753939"
+              href="tel:6465809160"
             >
-              (248)-275-3939
+              (646)-580-9160
             </Link>
           </p>
           <h2 className="uppercase text-default-500 text-tiny pt-4">Follow</h2>

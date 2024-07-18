@@ -1,5 +1,6 @@
 import DefaultLayout from "@/layouts/default";
 import Section from "@/layouts/section";
+import { Link } from "@nextui-org/react";
 import Image from "next/image";
 
 export default function IndexPage() {
@@ -24,9 +25,10 @@ export default function IndexPage() {
             </Heading>
             <Paragraph>
               A few months later I started taking formal lessons with Maria
-              Mierelles, who came out of retirement to take me as a student. She
-              worked with me to build a strong technical foundation, effective
-              practice habits and a deep love for music.
+              Mierelles, an accomplished Detroit pianist and teacher, who came
+              out of retirement to take me as a student. She worked with me to
+              build a strong technical foundation, effective practice habits and
+              a deep love for music.
             </Paragraph>
             <Paragraph isLast>
               My late start has given me a better understanding of how to help
@@ -43,10 +45,34 @@ export default function IndexPage() {
             and I was admitted to both Eastman and Juilliard on scholarship.
           </Heading>
           <Paragraph isLast>
-            Some of these prizes include first place at the Kuleshov
-            International Piano Competition, third place in Thousand Island
-            International Piano Competition, and honorable mention at Marian
-            Garcia International Piano Competition.
+            Some of these prizes include first place at the{" "}
+            <Link
+              className="font-normal"
+              color="secondary"
+              target="_blank"
+              href="https://sites.uco.edu/cfad/academics/music/the-kuleshov/past-winners"
+            >
+              Kuleshov International Piano Competition
+            </Link>
+            , third place in the{" "}
+            <Link
+              className="font-normal"
+              color="secondary"
+              target="_blank"
+              href="https://www.capevincentartscouncil.org/pianocompetitioninfo/2022competitionresults.html"
+            >
+              Thousand Island International Piano Competition
+            </Link>
+            , and honorable mention at{" "}
+            <Link
+              className="font-normal"
+              color="secondary"
+              target="_blank"
+              href="https://www.facebook.com/GarciaPianoCompetition/posts/pfbid0P6knJRPMaJgNt6v6tvB6TA4SWhLNLAvuHaL4WVzhGr4rMcLqJKxKhtMK1FXqmZNzl?rdid=ozmDJA8i1MX4enYb"
+            >
+              Marian Garcia International Piano Competition
+            </Link>
+            .
           </Paragraph>
           <Image
             src="/greg_at_carnegie_hall.jpg"
@@ -76,9 +102,9 @@ export default function IndexPage() {
               learning how the brain learns motor movements.
             </Paragraph>
             <Paragraph isLast>
-              I currently instruct over a dozen students in Manhattan and at the
-              Long Island Music Conservatory, and I view every lesson I give as
-              an opportunity to hone my teaching skills.
+              I currently instruct over a dozen students in the NYC area, and I
+              view every lesson I give as an opportunity to hone my teaching
+              skills.
             </Paragraph>
           </div>
           <Image
@@ -103,7 +129,7 @@ function Paragraph({
   children,
   isLast,
 }: {
-  children: string;
+  children: string | JSX.Element[] | Array<string | JSX.Element>;
   isLast?: boolean;
 }) {
   return (

@@ -1,11 +1,11 @@
-import DefaultLayout from '@/layouts/default';
-import Section from '@/layouts/section';
-import { Accordion, AccordionItem, Link } from '@nextui-org/react';
+import DefaultLayout from "@/layouts/default";
+import Section from "@/layouts/section";
+import { Accordion, AccordionItem, Link } from "@nextui-org/react";
 
 export default function IndexPage() {
   const philosophyContent = [
     {
-      title: 'Piano lessons should develop a students love for music',
+      title: "Piano lessons should develop a students love for music",
       content: (
         <div>
           <p className="pb-2">
@@ -19,7 +19,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music is a path to personal growth',
+      title: "Music is a path to personal growth",
       content: (
         <div>
           <p className="pb-2">
@@ -34,7 +34,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music is a path to connection',
+      title: "Music is a path to connection",
       content: (
         <div>
           <p className="pb-2">
@@ -52,7 +52,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'A highly supportive environment is essential',
+      title: "A highly supportive environment is essential",
       content: (
         <div>
           <p className="pb-2">
@@ -69,7 +69,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Students should be held to the highest standard they can be',
+      title: "Students should be held to the highest standard they can be",
       content: (
         <div>
           <p className="pb-2">
@@ -87,7 +87,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Practicing is an art that needs to be perfected',
+      title: "Practicing is an art that needs to be perfected",
       content: (
         <div>
           <p className="pb-2">
@@ -117,7 +117,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Piano expertise takes years to develop',
+      title: "Piano expertise takes years to develop",
       content: (
         <div>
           <p className="pb-2">
@@ -139,7 +139,7 @@ export default function IndexPage() {
   ];
   const lessonStructureContent = [
     {
-      title: 'Refinement of Practice Strategies',
+      title: "Refinement of Practice Strategies",
       content: (
         <div>
           <p className="pb-2">
@@ -159,7 +159,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Technique Training',
+      title: "Technique Training",
       content: (
         <div>
           <p className="pb-2">
@@ -179,7 +179,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Carefully Selected Repertoire',
+      title: "Carefully Selected Repertoire",
       content: (
         <div>
           <p className="pb-2">
@@ -192,15 +192,15 @@ export default function IndexPage() {
           <p className="pb-2">
             I've created a personal collection of over 50 pieces for beginner to
             advanced students, each annotated and ordered by level. I use this
-            along with the proven{' '}
+            along with the proven{" "}
             <Link
-              className="font-bold"
+              className="font-normal"
               color="secondary"
               target="_blank"
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
+            </Link>{" "}
             curriculum. When students are ready for a new piece, I offer them
             multiple options to choose from, giving them ownership and
             motivation to practice.
@@ -209,7 +209,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music Theory',
+      title: "Music Theory",
       content: (
         <div>
           <p className="pb-2">
@@ -219,15 +219,15 @@ export default function IndexPage() {
             analytical skills.
           </p>
           <p className="pb-2">
-            I use the{' '}
+            I use the{" "}
             <Link
-              className="font-bold"
+              className="font-normal"
               color="secondary"
               target="_blank"
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
+            </Link>{" "}
             curriculum for music theory. This well established curriculum brings
             students beyond an undergraduate level of music theory by the end of
             the program.
@@ -236,7 +236,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music History',
+      title: "Music History",
       content: (
         <div>
           <p className="pb-2">
@@ -245,15 +245,15 @@ export default function IndexPage() {
             students connect more personally with the pieces they play.
           </p>
           <p className="pb-2">
-            For advanced students, I use the{' '}
+            For advanced students, I use the{" "}
             <Link
-              className="font-bold"
+              className="font-normal"
               color="secondary"
               target="_blank"
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
+            </Link>{" "}
             curriculum for music history. It is a well established curriculum
             that brings students beyond an undergraduate level history by the
             time they finish the program.
@@ -262,7 +262,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Ear Training',
+      title: "Ear Training",
       content: (
         <div>
           <p className="pb-2">
@@ -277,13 +277,10 @@ export default function IndexPage() {
   ];
   return (
     <DefaultLayout>
-      <Section
-        maxWidth="max-w-3xl"
-        isFirst
-      >
+      <Section maxWidth="max-w-3xl" isFirst>
         <h1 className="text-3xl sm:text-4xl pb-4">Teaching Philosophy</h1>
         <Accordion
-          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          itemClasses={{ title: "text-md", content: "text-default-600" }}
           selectionMode="multiple"
         >
           {philosophyContent.map((item, index) => (
@@ -300,7 +297,7 @@ export default function IndexPage() {
         <Accordion
           id="curriculum"
           selectionMode="multiple"
-          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          itemClasses={{ title: "text-md", content: "text-default-600" }}
         >
           {lessonStructureContent.map((item, index) => (
             <AccordionItem
