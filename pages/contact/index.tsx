@@ -67,7 +67,7 @@ export default function IndexPage() {
   const debouncedFormatPhone = useRef(
     debounce((phoneInput) => {
       setPhone(new AsYouType('US').input(phoneInput));
-    }, 500)
+    }, 1000)
   );
 
   const { executeRecaptcha } = useGoogleReCaptcha();
