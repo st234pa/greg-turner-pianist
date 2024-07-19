@@ -151,7 +151,7 @@ export default function IndexPage() {
             or call or text me at{' '}
             <Link
               size="sm"
-              href="tel:6465809160"
+              href="sms:6465809160"
               color="secondary"
             >
               (646)-580-9160
