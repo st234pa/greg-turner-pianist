@@ -17,7 +17,11 @@ import {
   ModalFooter,
 } from '@nextui-org/modal';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { AsYouType, isValidPhoneNumber } from 'libphonenumber-js';
+import {
+  AsYouType,
+  isValidPhoneNumber,
+  parsePhoneNumber,
+} from 'libphonenumber-js';
 
 const daysOfWeek = [
   'Sunday',
@@ -58,6 +62,12 @@ export default function IndexPage() {
   useEffect(() => {
     return () => abortController.current.abort();
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPhone((prev) => new AsYouType('US').input(prev));
+    }, 1000);
+  }, [phone]);
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -188,9 +198,7 @@ export default function IndexPage() {
             type="tel"
             label="Phone"
             isRequired
-            onValueChange={(value) =>
-              setPhone(new AsYouType('US').input(value))
-            }
+            onValueChange={setPhone}
             value={phone}
             isInvalid={submitAttempted && !isValidPhoneNumber(phone, 'US')}
             errorMessage="Please enter a valid phone number"
@@ -289,6 +297,7 @@ export default function IndexPage() {
           radius="full"
           fullWidth
           onPress={() => {
+            setPhone(parsePhoneNumber(phone, 'US').formatNational());
             if (!invalidInputs) {
               setConfirmationModalOpen(true);
             } else if (!submitAttempted && invalidInputs) {
