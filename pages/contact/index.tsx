@@ -107,14 +107,15 @@ export default function IndexPage() {
             signal: abortController.current.signal,
           })
         )
-        .then((response) => {
+        .then(async (response) => {
           if (response.ok) {
             setSubmitState('success');
           } else {
-            throw new Error();
+            throw new Error(await response.text());
           }
         })
-        .catch(() => {
+        .catch((e: Error) => {
+          console.log(e);
           setErrorModalOpen(true);
           setSubmitState('error');
         });
