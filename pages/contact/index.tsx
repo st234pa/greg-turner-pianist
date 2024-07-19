@@ -22,6 +22,7 @@ import {
   isValidPhoneNumber,
   parsePhoneNumber,
 } from 'libphonenumber-js';
+import debounce from 'lodash.debounce';
 
 const daysOfWeek = [
   'Sunday',
@@ -63,11 +64,11 @@ export default function IndexPage() {
     return () => abortController.current.abort();
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setPhone((prev) => new AsYouType('US').input(prev));
-    }, 1000);
-  }, [phone]);
+  const debouncedFormatPhone = useRef(
+    debounce((phoneInput) => {
+      setPhone(new AsYouType('US').input(phoneInput));
+    }, 500)
+  );
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -198,7 +199,10 @@ export default function IndexPage() {
             type="tel"
             label="Phone"
             isRequired
-            onValueChange={setPhone}
+            onValueChange={(phoneInput) => {
+              setPhone(phoneInput);
+              debouncedFormatPhone.current(phoneInput);
+            }}
             value={phone}
             isInvalid={submitAttempted && !isValidPhoneNumber(phone, 'US')}
             errorMessage="Please enter a valid phone number"
