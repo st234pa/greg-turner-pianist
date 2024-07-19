@@ -1,15 +1,12 @@
-import DefaultLayout from '@/layouts/default';
-import Section from '@/layouts/section';
-import Link from 'next/link';
-import Image from 'next/image';
+import DefaultLayout from "@/layouts/default";
+import Section from "@/layouts/section";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function IndexPage() {
   return (
     <DefaultLayout>
-      <Section
-        maxWidth="max-w-3xl"
-        isFirst
-      >
+      <Section maxWidth="max-w-3xl" isFirst>
         <div className="text-3xl sm:text-4xl pb-4">About Me</div>
         <div className="md:grid md:grid-cols-5 md:gap-6 pb-5">
           <div className="h-full md:col-span-2 md:flex md:flex-col">
@@ -57,30 +54,30 @@ export default function IndexPage() {
             and I was admitted to both Eastman and Juilliard on scholarship.
           </Heading>
           <Paragraph isLast>
-            Some of these prizes include first place at the{' '}
+            Some of these prizes include first place at the{" "}
             <Link
               className="font-normal text-secondary tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
               target="_blank"
               href="https://sites.uco.edu/cfad/academics/music/the-kuleshov/past-winners"
             >
               Kuleshov
-            </Link>{' '}
-            International Piano Competition, third place in the{' '}
+            </Link>{" "}
+            International Piano Competition, third place in the{" "}
             <Link
               className="font-normal text-secondary tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
               target="_blank"
               href="https://www.capevincentartscouncil.org/pianocompetitioninfo/2022competitionresults.html"
             >
               Thousand Islands
-            </Link>{' '}
-            International Piano Competition, and honorable mention at the{' '}
+            </Link>{" "}
+            International Piano Competition, and honorable mention at the{" "}
             <Link
               className="font-normal text-secondary tap-highlight-transparent data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
               target="_blank"
               href="https://www.facebook.com/GarciaPianoCompetition/posts/pfbid0P6knJRPMaJgNt6v6tvB6TA4SWhLNLAvuHaL4WVzhGr4rMcLqJKxKhtMK1FXqmZNzl?rdid=ozmDJA8i1MX4enYb"
             >
               Marian Garcia
-            </Link>{' '}
+            </Link>{" "}
             International Piano Competition.
           </Paragraph>
           <Image
@@ -118,9 +115,8 @@ export default function IndexPage() {
               learning how the brain learns motor movements.
             </Paragraph>
             <Paragraph isLast>
-              I currently instruct over a dozen students in the NYC area, and I
-              view every lesson I give as an opportunity to hone my teaching
-              skills.
+              I've taught over 20 students in the NYC area, and I view every
+              lesson I give as an opportunity to hone my teaching skills.
             </Paragraph>
           </div>
           <div className="h-full md:col-span-3 md:flex md:flex-col">
@@ -136,7 +132,7 @@ export default function IndexPage() {
             </div>
             <div className="text-center mt-1">
               <p className="text-sm font-light text-default-500">
-                Me and my first teacher, Maria Meirelles
+                Me at Juilliard commencement
               </p>
             </div>
           </div>
@@ -164,7 +160,7 @@ function Paragraph({
   isLast?: boolean;
 }) {
   return (
-    <div className={`${isLast ? '' : 'pb-4'} font-light text-default-600`}>
+    <div className={`${isLast ? "" : "pb-4"} font-light text-default-600`}>
       {children}
     </div>
   );
