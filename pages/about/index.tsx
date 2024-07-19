@@ -143,9 +143,9 @@ export default function IndexPage() {
         </div>
         <div className="text-sm font-light text-default-500 pt-5">
           *I would be remiss if I didn't thank all of the teachers who played a
-          pivotal role in my growth as a musician/educator/person: Maria
-          Meirelles, Dizhou Zhao, Nelita True, Boris Slutsky, Alan Chow, and
-          Julian Martin.
+          pivotal role in my growth not only as a musician and educator, but
+          also as a person: Maria Meirelles, Dizhou Zhao, Nelita True, Boris
+          Slutsky, Alan Chow, and Julian Martin.
         </div>
       </Section>
     </DefaultLayout>
