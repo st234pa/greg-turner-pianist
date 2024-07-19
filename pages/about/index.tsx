@@ -104,8 +104,8 @@ export default function IndexPage() {
             need to attain their goals.
           </Paragraph>
         </div>
-        <div className="md:grid md:grid-cols-5 md:gap-6 pb-4">
-          <div className="pb-4 md:col-span-3">
+        <div className="md:grid md:grid-cols-7 md:gap-6 pb-5">
+          <div className="pt-4 md:pt-0 md:col-span-4">
             <Heading>
               I have studied pedagogy at Eastman and Juilliard, and I have years
               of experience teaching students of all ages.
@@ -123,7 +123,7 @@ export default function IndexPage() {
               skills.
             </Paragraph>
           </div>
-          <div className="h-full md:col-span-2 md:flex md:flex-col">
+          <div className="h-full md:col-span-3 md:flex md:flex-col">
             <div className="md:flex-grow">
               <Image
                 src="/greg_graduation.jpg"
@@ -136,7 +136,7 @@ export default function IndexPage() {
             </div>
             <div className="text-center mt-1">
               <p className="text-sm font-light text-default-500">
-                Me at Juilliard commencement
+                Me and my first teacher, Maria Meirelles
               </p>
             </div>
           </div>

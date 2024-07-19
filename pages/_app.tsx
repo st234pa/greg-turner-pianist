@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app';
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
@@ -20,7 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextThemesProvider forcedTheme="light">
         <GoogleReCaptchaProvider reCaptchaKey="6LcClgQqAAAAACAEkhusFmItV5nv66CPXVXGncqg">
           <Component {...pageProps} />
-          <GoogleAnalytics gaId="G-XQ3YDDPEVF" />
         </GoogleReCaptchaProvider>
       </NextThemesProvider>
     </NextUIProvider>
