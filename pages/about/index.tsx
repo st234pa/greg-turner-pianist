@@ -15,7 +15,7 @@ export default function IndexPage() {
           <div className="h-full md:col-span-2 md:flex md:flex-col">
             <div className="md:flex-grow">
               <Image
-                src="/greg_and_childhood_teacher.JPG"
+                src="/greg_and_maria_meirelles.jpg"
                 alt="A picture of me and my first teacher, Maria Meirelles"
                 priority
                 className="object-cover rounded-[16px] md:h-full"
