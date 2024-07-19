@@ -17,7 +17,11 @@ import {
   ModalFooter,
 } from '@nextui-org/modal';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { AsYouType, isValidPhoneNumber } from 'libphonenumber-js';
+import {
+  AsYouType,
+  isValidPhoneNumber,
+  parsePhoneNumber,
+} from 'libphonenumber-js';
 
 const daysOfWeek = [
   'Sunday',
@@ -62,7 +66,7 @@ export default function IndexPage() {
   useEffect(() => {
     setTimeout(() => {
       setPhone((prev) => new AsYouType('US').input(prev));
-    }, 500);
+    }, 1000);
   }, [phone]);
 
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -293,6 +297,7 @@ export default function IndexPage() {
           radius="full"
           fullWidth
           onPress={() => {
+            setPhone(parsePhoneNumber(phone, 'US').formatNational());
             if (!invalidInputs) {
               setConfirmationModalOpen(true);
             } else if (!submitAttempted && invalidInputs) {
