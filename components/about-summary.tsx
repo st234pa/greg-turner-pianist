@@ -1,7 +1,7 @@
 import Section from '@/layouts/section';
 import { Button, Link } from '@nextui-org/react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function AboutSummary() {
   return (
@@ -22,6 +22,12 @@ export default function AboutSummary() {
               color="primary"
               variant="shadow"
               radius="full"
+              onPress={() => {
+                sendGTMEvent({
+                  event: 'buttonClicked',
+                  value: 'about-summary-cta',
+                });
+              }}
               as={Link}
               size="lg"
               href="/contact"

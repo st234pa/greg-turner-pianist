@@ -36,7 +36,7 @@ export default function IndexPage() {
               Sonata and Joplin's Maple Leaf Rag.
             </Heading>
             <Paragraph>
-              A few months later I started taking formal lessons with Maria
+              A few months later, I started taking formal lessons with Maria
               Meirelles, an accomplished Detroit pianist and teacher, who came
               out of retirement to take me as a student. She worked with me to
               develop not only strong technical foundations and effective
