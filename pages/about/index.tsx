@@ -105,7 +105,7 @@ export default function IndexPage() {
           </Paragraph>
         </div>
         <div className="md:grid md:grid-cols-7 md:gap-6 pb-5">
-          <div className="pt-4 md:pt-0 md:col-span-4">
+          <div className="pb-4 md:pb-0 md:col-span-4">
             <Heading>
               I have studied pedagogy at Eastman and Juilliard, and I have years
               of experience teaching students of all ages.
