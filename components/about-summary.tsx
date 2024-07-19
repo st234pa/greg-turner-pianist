@@ -32,7 +32,7 @@ export default function AboutSummary() {
         </div>
         <div className="about-summary-image-container">
           <Image
-            src="/greg_headshot.jpg"
+            src="/greg_headshot.JPG"
             className="about-summary-image-blur"
             alt="Greg Turner headshot blurred"
             priority
@@ -40,7 +40,7 @@ export default function AboutSummary() {
             height={1000000}
           />
           <Image
-            src="/greg_headshot.jpg"
+            src="/greg_headshot.JPG"
             className="about-summary-image"
             alt="Greg Turner headshot"
             priority
