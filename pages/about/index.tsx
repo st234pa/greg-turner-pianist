@@ -13,7 +13,7 @@ export default function IndexPage() {
             <div className="md:flex-grow">
               <Image
                 src="/greg_and_childhood_teacher.JPG"
-                alt="A picture of me and my first teacher, Maria Mierelles"
+                alt="A picture of me and my first teacher, Maria Meirelles"
                 priority
                 className="object-cover rounded-[16px] md:h-full"
                 width={1000000}
@@ -22,7 +22,7 @@ export default function IndexPage() {
             </div>
             <div className="text-center mt-1">
               <p className="text-sm font-light text-default-500">
-                Me and my first teacher, Maria Mierelles
+                Me and my first teacher, Maria Meirelles
               </p>
             </div>
           </div>
@@ -34,10 +34,10 @@ export default function IndexPage() {
             </Heading>
             <Paragraph>
               A few months later I started taking formal lessons with Maria
-              Mierelles, an accomplished Detroit pianist and teacher, who came
+              Meirelles, an accomplished Detroit pianist and teacher, who came
               out of retirement to take me as a student. She worked with me to
               build a strong technical foundation, effective practice habits and
-              a deep love for music.
+              a deep love for music.*
             </Paragraph>
             <Paragraph isLast>
               My late start has given me a better understanding of how to help
@@ -137,6 +137,12 @@ export default function IndexPage() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="text-sm font-light text-default-500 pt-5">
+          *I would be remiss if I didn't thank all of the teachers who played a
+          pivotal role in my growth as a musician/educator/person: Maria
+          Meirelles, Dizhou Zhao, Nelita True, Boris Slutsky, Alan Chow, and
+          Julian Martin.
         </div>
       </Section>
     </DefaultLayout>
