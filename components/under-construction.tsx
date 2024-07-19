@@ -1,5 +1,5 @@
-import { EmailIcon, FacebookIcon, InstagramIcon, YoutubeIcon } from './icons';
-import { Link } from '@nextui-org/link';
+import { EmailIcon, FacebookIcon, InstagramIcon, YoutubeIcon } from "./icons";
+import { Link } from "@nextui-org/link";
 
 export default function UnderConstruction() {
   return (
@@ -12,7 +12,7 @@ export default function UnderConstruction() {
         <div className="w-full flex justify-center items-center gap-6">
           <Link
             color="warning"
-            href="https://instagram.com/gregturnerpianist"
+            href="https://instagram.com/gregturnerpianostudio"
             target="_blank"
           >
             <InstagramIcon />
@@ -33,7 +33,7 @@ export default function UnderConstruction() {
           </Link>
           <Link
             color="warning"
-            href="mailto:gregturnerpianist@gmail.com"
+            href="mailto:gregturnerpianostudio@gmail.com"
             target="_blank"
           >
             <EmailIcon />
