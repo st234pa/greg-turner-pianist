@@ -43,7 +43,7 @@ export default function Footer() {
               <InstagramIcon />
             </Link>
             <Link
-              href="https://www.facebook.com/profile.php?id=61561084240413"
+              href="https://www.facebook.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
             >
