@@ -16,7 +16,7 @@ import {
   Link,
 } from '@nextui-org/react';
 import { ReactElement, useState } from 'react';
-import { sendGTMEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@next/third-parties/google';
 
 type Subscription = {
   title: string;
@@ -219,7 +219,7 @@ export default function IndexPage() {
                   isPressable
                   onPress={() => {
                     setSelectedSubscription(subscription);
-                    sendGTMEvent({
+                    sendGAEvent({
                       event: 'buttonClicked',
                       value: subscription.tag,
                     });
@@ -290,7 +290,7 @@ export default function IndexPage() {
                   as={Link}
                   href="/contact"
                   onPress={() => {
-                    sendGTMEvent({
+                    sendGAEvent({
                       event: 'buttonClicked',
                       value: 'pricing-modal-cta',
                     });

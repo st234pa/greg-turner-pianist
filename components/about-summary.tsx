@@ -1,7 +1,7 @@
 import Section from '@/layouts/section';
 import { Button, Link } from '@nextui-org/react';
 import Image from 'next/image';
-import { sendGTMEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function AboutSummary() {
   return (
@@ -23,7 +23,7 @@ export default function AboutSummary() {
               variant="shadow"
               radius="full"
               onPress={() => {
-                sendGTMEvent({
+                sendGAEvent({
                   event: 'buttonClicked',
                   value: 'about-summary-cta',
                 });
