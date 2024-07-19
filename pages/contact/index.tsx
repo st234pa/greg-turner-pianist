@@ -59,6 +59,12 @@ export default function IndexPage() {
     return () => abortController.current.abort();
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setPhone((prev) => new AsYouType('US').input(prev));
+    }, 500);
+  }, [phone]);
+
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const invalidInputs =
@@ -188,9 +194,7 @@ export default function IndexPage() {
             type="tel"
             label="Phone"
             isRequired
-            onValueChange={(value) =>
-              setPhone(new AsYouType('US').input(value))
-            }
+            onValueChange={setPhone}
             value={phone}
             isInvalid={submitAttempted && !isValidPhoneNumber(phone, 'US')}
             errorMessage="Please enter a valid phone number"
