@@ -16,7 +16,6 @@ import {
   Link,
 } from '@nextui-org/react';
 import { ReactElement, useState } from 'react';
-import { sendGAEvent } from '@next/third-parties/google';
 
 type Subscription = {
   title: string;
@@ -219,10 +218,6 @@ export default function IndexPage() {
                   isPressable
                   onPress={() => {
                     setSelectedSubscription(subscription);
-                    sendGAEvent({
-                      event: 'buttonClicked',
-                      value: subscription.tag,
-                    });
                   }}
                 >
                   <CardHeader>
@@ -289,12 +284,6 @@ export default function IndexPage() {
                   radius="full"
                   as={Link}
                   href="/contact"
-                  onPress={() => {
-                    sendGAEvent({
-                      event: 'buttonClicked',
-                      value: 'pricing-modal-cta',
-                    });
-                  }}
                 >
                   Request a FREE Trial Lesson
                 </Button>
