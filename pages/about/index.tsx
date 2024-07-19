@@ -39,8 +39,8 @@ export default function IndexPage() {
               A few months later I started taking formal lessons with Maria
               Meirelles, an accomplished Detroit pianist and teacher, who came
               out of retirement to take me as a student. She worked with me to
-              develop a strong technical foundation, effective practice habits
-              and a deep love for music.*
+              develop not only strong technical foundations and effective
+              practice habits, but also a deep love for music.*
             </Paragraph>
             <Paragraph isLast>
               My late start has given me a better understanding of how to help
