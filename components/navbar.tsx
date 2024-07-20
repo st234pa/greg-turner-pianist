@@ -19,6 +19,7 @@ import {
   WebsiteIcon,
   YoutubeIcon,
 } from "./icons";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export const Navbar = () => {
   const currentNav = usePathname();
@@ -57,7 +58,18 @@ export const Navbar = () => {
 
       <NavbarContent justify="end" className="hidden sm:flex">
         <NavbarItem>
-          <Button color="primary" radius="full" as={Link} href="/contact">
+          <Button
+            color="primary"
+            radius="full"
+            as={Link}
+            href="/contact"
+            onPress={() =>
+              sendGAEvent({
+                event: "callToActionClicked",
+                value: "navbar",
+              })
+            }
+          >
             Request a FREE Trial Lesson
           </Button>
         </NavbarItem>
