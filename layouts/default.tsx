@@ -1,7 +1,8 @@
-import { Head } from './head';
+import { Head } from "./head";
 
-import { Navbar } from '@/components/navbar';
-import Footer from '@/components/footer';
+import { Navbar } from "@/components/navbar";
+import Footer from "@/components/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function DefaultLayout({
   children,
@@ -17,5 +18,11 @@ export default function DefaultLayout({
       </div>
       <Footer />
     </>
+  );
+  return (
+    <html lang="en">
+      <body>{children}</body>
+      <GoogleAnalytics gaId="G-KTEJXPYXPG" />
+    </html>
   );
 }
