@@ -4,6 +4,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { useRouter } from "next/router";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "@/styles/globals.css";
 import "@/styles/about.css";
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextThemesProvider forcedTheme="light">
         <GoogleReCaptchaProvider reCaptchaKey="6LcClgQqAAAAACAEkhusFmItV5nv66CPXVXGncqg">
           <Component {...pageProps} />
+          <GoogleAnalytics gaId="G-KTEJXPYXPG" />
         </GoogleReCaptchaProvider>
       </NextThemesProvider>
     </NextUIProvider>
