@@ -63,12 +63,9 @@ export const Navbar = () => {
             radius="full"
             as={Link}
             href="/contact"
-            onPress={() =>
-              sendGAEvent({
-                event: "callToActionClicked",
-                value: "navbar",
-              })
-            }
+            onPress={() => {
+              gtag("event", "click_CTA_navbar", {});
+            }}
           >
             Request a FREE Trial Lesson
           </Button>

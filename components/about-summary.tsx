@@ -25,12 +25,9 @@ export default function AboutSummary() {
               as={Link}
               size="lg"
               href="/contact"
-              onPress={() =>
-                sendGAEvent({
-                  event: "callToActionClicked",
-                  value: "aboutSummary",
-                })
-              }
+              onPress={() => {
+                gtag("event", "click_CTA_aboutSummary", {});
+              }}
             >
               Request a FREE Trial Lesson
             </Button>
