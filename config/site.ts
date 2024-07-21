@@ -6,14 +6,17 @@ export const siteConfig = {
   navItems: [
     {
       label: 'About Me',
+      id:'about',
       href: '/about',
     },
     {
       label: 'Teaching Philosophy',
+      id:'philosophy',
       href: '/philosophy',
     },
     {
       label: 'Pricing',
+      id: 'pricing',
       href: '/pricing',
     },
   ],

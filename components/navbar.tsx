@@ -51,6 +51,7 @@ export const Navbar = () => {
               currentNav={currentNav}
               href={item.href}
               label={item.label}
+              id={`nav-${item.id}`}
             />
           </NavbarItem>
         ))}
@@ -58,7 +59,13 @@ export const Navbar = () => {
 
       <NavbarContent justify="end" className="hidden sm:flex">
         <NavbarItem>
-          <Button color="primary" radius="full" as={Link} href="/contact">
+          <Button
+            color="primary"
+            radius="full"
+            as={Link}
+            href="/contact"
+            id="nav-contact"
+          >
             Request a FREE Trial Lesson
           </Button>
         </NavbarItem>
@@ -72,6 +79,7 @@ export const Navbar = () => {
               currentNav={currentNav}
               href={item.href}
               label={item.label}
+              id={`nav-menu-${item.id}`}
             />
           </NavbarMenuItem>
         ))}
@@ -81,6 +89,7 @@ export const Navbar = () => {
             currentNav={currentNav}
             href="/contact"
             label="Request a FREE Trial Lesson"
+            id="nav-menu-contact"
           />
         </NavbarMenuItem>
       </NavbarMenu>
@@ -101,6 +110,7 @@ const Brand = (props: BrandProps) => {
         color="foreground"
         size="lg"
         className="pt-[3px]"
+        id="nav-home"
       >
         <WebsiteIcon />
       </Link>
@@ -112,6 +122,7 @@ type NavLinkProps = {
   href: string;
   currentNav: string;
   label: string;
+  id: string;
   setIsMenuOpen: (isMenuOpen: boolean) => void;
 };
 
@@ -121,6 +132,7 @@ const NavLink = (props: NavLinkProps) => {
       color={props.currentNav === props.href ? "secondary" : "foreground"}
       href={props.href}
       onPress={() => props.setIsMenuOpen(false)}
+      id={props.id}
     >
       {props.label}
     </Link>
