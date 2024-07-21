@@ -79,7 +79,7 @@ export const Navbar = () => {
               currentNav={currentNav}
               href={item.href}
               label={item.label}
-              id={`nav-menu-${item.id}`}
+              id={`nav-${item.id}`}
             />
           </NavbarMenuItem>
         ))}
@@ -89,7 +89,7 @@ export const Navbar = () => {
             currentNav={currentNav}
             href="/contact"
             label="Request a FREE Trial Lesson"
-            id="nav-menu-contact"
+            id="nav-contact"
           />
         </NavbarMenuItem>
       </NavbarMenu>
