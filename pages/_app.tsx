@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-KTEJXPYXPG"
           ></Script>
-          <Script>
+          <Script id="google-analytics">
             {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
