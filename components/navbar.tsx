@@ -58,15 +58,7 @@ export const Navbar = () => {
 
       <NavbarContent justify="end" className="hidden sm:flex">
         <NavbarItem>
-          <Button
-            color="primary"
-            radius="full"
-            as={Link}
-            href="/contact"
-            onPress={() => {
-              gtag("event", "click_CTA_navbar", {});
-            }}
-          >
+          <Button color="primary" radius="full" as={Link} href="/contact">
             Request a FREE Trial Lesson
           </Button>
         </NavbarItem>
