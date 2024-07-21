@@ -72,15 +72,15 @@ export default function IndexPage() {
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const invalidInputs =
-    !email ||
-    !name ||
-    !zip ||
-    !phone ||
-    isInvalidEmail(email) ||
-    !isValidPhoneNumber(phone, 'US') ||
-    isInvalidZip(zip) ||
-    isInvalidTimeslots(selectedTimeSlots);
+  const validInputs =
+    !!email &&
+    !!name &&
+    !!zip &&
+    !!phone &&
+    isValidEmail(email) &&
+    isValidPhoneNumber(phone, 'US') &&
+    isValidZip(zip) &&
+    isValidTimeslots(selectedTimeSlots);
 
   function onSubmit() {
     abortController.current.abort();
@@ -193,7 +193,7 @@ export default function IndexPage() {
             isRequired
             onValueChange={setEmail}
             value={email}
-            isInvalid={submitAttempted && isInvalidEmail(email)}
+            isInvalid={submitAttempted && !isValidEmail(email)}
             errorMessage="Please enter a valid email"
             isDisabled={submitting}
           />
@@ -221,7 +221,7 @@ export default function IndexPage() {
             isRequired
             value={zip}
             onValueChange={setZip}
-            isInvalid={submitAttempted && isInvalidZip(zip)}
+            isInvalid={submitAttempted && !isValidZip(zip)}
             errorMessage="Please enter a valid zip code"
             isDisabled={submitting}
           />
@@ -301,14 +301,20 @@ export default function IndexPage() {
         />
         <Button
           color="primary"
-          isDisabled={(invalidInputs && submitAttempted) || submitting}
+          isDisabled={(!validInputs && submitAttempted) || submitting}
           radius="full"
           fullWidth
           onPress={() => {
-            setPhone(parsePhoneNumber(phone, 'US').formatNational());
-            if (!invalidInputs) {
+            let isValidPhone = true;
+            try {
+              setPhone(parsePhoneNumber(phone, 'US').formatNational());
+            } catch {
+              isValidPhone = false;
+            }
+
+            if (validInputs && isValidPhone) {
               setConfirmationModalOpen(true);
-            } else if (!submitAttempted && invalidInputs) {
+            } else if (!submitAttempted) {
               setValidationModalOpen(true);
               setSubmitState('invalid');
             }
@@ -439,18 +445,18 @@ export default function IndexPage() {
   );
 }
 
-function isInvalidEmail(value: string) {
-  return !value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]+/i);
+function isValidEmail(value: string) {
+  return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]+/i);
 }
 
-function isInvalidZip(value: string) {
-  return !value.match(/^[0-9]{5}(?:-[0-9]{4})?$/i);
+function isValidZip(value: string) {
+  return value.match(/^[0-9]{5}(?:-[0-9]{4})?$/i);
 }
 
-function isInvalidTimeslots(selectedTimeSlots: Map<string, string[]>) {
+function isValidTimeslots(selectedTimeSlots: Map<string, string[]>) {
   return (
-    selectedTimeSlots.size === 0 ||
-    Array.from(selectedTimeSlots.values()).find(
+    selectedTimeSlots.size > 0 &&
+    !Array.from(selectedTimeSlots.values()).find(
       (timeSlots) => timeSlots.length === 0
     )
   );
