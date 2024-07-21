@@ -128,7 +128,10 @@ export default function IndexPage() {
           maxWidth="max-w-4xl"
           isFirst
         >
-          <div className="w-full pb-8">
+          <div
+            className="w-full pb-8"
+            id="submit-success"
+          >
             <h1 className="text-2xl pb-2">Thank you!</h1>
             Your response has been submitted. I'll get back to you within 24-48
             hours.
@@ -322,6 +325,7 @@ export default function IndexPage() {
         isOpen={validationModalOpen}
         backdrop="blur"
         onOpenChange={setValidationModalOpen}
+        id="submit-error-modal"
       >
         <ModalContent>
           {(onClose) => (
@@ -344,6 +348,7 @@ export default function IndexPage() {
                 <Button
                   color="primary"
                   radius="full"
+                  id="submit-retry"
                   onPress={() => {
                     onClose();
                   }}
