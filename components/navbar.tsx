@@ -8,18 +8,11 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from "@nextui-org/react";
-import { siteConfig } from "@/config/site";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import {
-  EmailIcon,
-  FacebookIcon,
-  InstagramIcon,
-  WebsiteIcon,
-  YoutubeIcon,
-} from "./icons";
-import { sendGAEvent } from "@next/third-parties/google";
+} from '@nextui-org/react';
+import { siteConfig } from '@/config/site';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { WebsiteIcon } from './icons';
 
 export const Navbar = () => {
   const currentNav = usePathname();
@@ -31,12 +24,18 @@ export const Navbar = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="lg:hidden" justify="start">
+      <NavbarContent
+        className="lg:hidden"
+        justify="start"
+      >
         <NavbarMenuToggle />
         <Brand />
       </NavbarContent>
 
-      <NavbarContent className="hidden lg:flex" justify="center">
+      <NavbarContent
+        className="hidden lg:flex"
+        justify="center"
+      >
         <Brand />
       </NavbarContent>
 
@@ -57,14 +56,17 @@ export const Navbar = () => {
         ))}
       </NavbarContent>
 
-      <NavbarContent justify="end" className="hidden sm:flex">
+      <NavbarContent
+        justify="end"
+        className="hidden sm:flex"
+      >
         <NavbarItem>
           <Button
             color="primary"
             radius="full"
             as={Link}
             href="/contact"
-            id="nav-contact"
+            id="contact-nav"
           >
             Request a FREE Trial Lesson
           </Button>
@@ -89,7 +91,7 @@ export const Navbar = () => {
             currentNav={currentNav}
             href="/contact"
             label="Request a FREE Trial Lesson"
-            id="nav-contact"
+            id="contact-nav"
           />
         </NavbarMenuItem>
       </NavbarMenu>
@@ -129,7 +131,7 @@ type NavLinkProps = {
 const NavLink = (props: NavLinkProps) => {
   return (
     <Link
-      color={props.currentNav === props.href ? "secondary" : "foreground"}
+      color={props.currentNav === props.href ? 'secondary' : 'foreground'}
       href={props.href}
       onPress={() => props.setIsMenuOpen(false)}
       id={props.id}

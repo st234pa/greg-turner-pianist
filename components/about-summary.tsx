@@ -1,7 +1,6 @@
-import Section from "@/layouts/section";
-import { Button, Link } from "@nextui-org/react";
-import Image from "next/image";
-import { sendGAEvent } from "@next/third-parties/google";
+import Section from '@/layouts/section';
+import { Button, Link } from '@nextui-org/react';
+import Image from 'next/image';
 
 export default function AboutSummary() {
   return (
@@ -25,6 +24,7 @@ export default function AboutSummary() {
               as={Link}
               size="lg"
               href="/contact"
+              id="contact-about-summary"
             >
               Request a FREE Trial Lesson
             </Button>

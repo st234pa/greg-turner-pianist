@@ -1,7 +1,7 @@
-import { FacebookIcon, InstagramIcon, WebsiteIcon, YoutubeIcon } from "./icons";
-import { Divider, Link } from "@nextui-org/react";
-import Section from "@/layouts/section";
-import { siteConfig } from "@/config/site";
+import { FacebookIcon, InstagramIcon, WebsiteIcon, YoutubeIcon } from './icons';
+import { Divider, Link } from '@nextui-org/react';
+import Section from '@/layouts/section';
+import { siteConfig } from '@/config/site';
 
 export default function Footer() {
   return (
@@ -9,7 +9,12 @@ export default function Footer() {
       <Divider className="mt-4" />
       <div className="w-full pt-4 lg:px-24 md:flex md:flex-row items-center gap-4 ">
         <h1 className="pb-3 sm:pb-0 text-2xl font-semibold flex-grow">
-          <Link href="/" color="foreground" size="lg">
+          <Link
+            href="/"
+            color="foreground"
+            size="lg"
+            id="footer-home"
+          >
             <WebsiteIcon />
           </Link>
         </h1>
@@ -21,6 +26,7 @@ export default function Footer() {
               color="foreground"
               target="_blank"
               href="mailto:gregturnerpianostudio@gmail.com"
+              id="footer-email"
             >
               gregturnerpianostudio@gmail.com
             </Link>
@@ -31,6 +37,7 @@ export default function Footer() {
               color="foreground"
               target="_blank"
               href="sms:6465809160"
+              id="footer-phone"
             >
               (646)-580-9160
             </Link>
@@ -41,6 +48,7 @@ export default function Footer() {
               href="https://instagram.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
+              id="footer-instagram"
             >
               <InstagramIcon />
             </Link>
@@ -48,6 +56,7 @@ export default function Footer() {
               href="https://www.facebook.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
+              id="footer-facebook"
             >
               <FacebookIcon />
             </Link>
@@ -55,6 +64,7 @@ export default function Footer() {
               href="https://www.youtube.com/@gregturnerpianist"
               target="_blank"
               color="foreground"
+              id="footer-youtube"
             >
               <YoutubeIcon />
             </Link>
@@ -66,13 +76,23 @@ export default function Footer() {
           </h2>
           {siteConfig.navItems.map((navItem) => (
             <div key={navItem.href}>
-              <Link href={navItem.href} size="sm" color="foreground">
+              <Link
+                href={navItem.href}
+                size="sm"
+                color="foreground"
+                id={`footer-${navItem.id}`}
+              >
                 {navItem.label}
               </Link>
             </div>
           ))}
           <div>
-            <Link href={"/contact"} size="sm" color="foreground">
+            <Link
+              href={'/contact'}
+              size="sm"
+              color="foreground"
+              id="contact-footer"
+            >
               Request a FREE Trial Lesson
             </Link>
           </div>
@@ -83,7 +103,7 @@ export default function Footer() {
         Last updated July 18, 2024.
       </div>
       <div className="w-full pb-2 text-tiny text-default-500">
-        This site is protected by reCAPTCHA and the Google{" "}
+        This site is protected by reCAPTCHA and the Google{' '}
         <Link
           href="https://policies.google.com/privacy"
           color="secondary"
@@ -91,8 +111,8 @@ export default function Footer() {
           className="text-tiny"
         >
           Privacy Policy
-        </Link>{" "}
-        and{" "}
+        </Link>{' '}
+        and{' '}
         <Link
           target="_blank"
           color="secondary"
@@ -100,7 +120,7 @@ export default function Footer() {
           className="text-tiny"
         >
           Terms of Service
-        </Link>{" "}
+        </Link>{' '}
         apply.
       </div>
     </Section>

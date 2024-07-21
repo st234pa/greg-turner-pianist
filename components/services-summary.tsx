@@ -7,6 +7,7 @@ export default function ServicesSummary() {
     <Section>
       <div className="services-summary">
         <ServiceSummary
+          id="services-summary-about"
           title="Superior Training"
           blurb={
             <>
@@ -15,7 +16,7 @@ export default function ServicesSummary() {
                 enough to have studied with some of the best teachers in the
                 world.
               </p>
-              <p className="text-lg  font-light">
+              <p className="text-lg font-light">
                 I have spent years studying and applying their proven methods in
                 my lessons, so each of my students gets personalized, engaging,
                 and highly effective instruction.
@@ -25,6 +26,7 @@ export default function ServicesSummary() {
           href="/about"
         />
         <ServiceSummary
+          id="services-summary-philosophy"
           title="Insightful Instruction"
           blurb={
             <>
@@ -43,6 +45,7 @@ export default function ServicesSummary() {
         />
         <ServiceSummary
           title="Competitive Pricing"
+          id="services-summary-pricing"
           blurb={
             <>
               <p className="pb-4 text-lg  font-light">
@@ -67,16 +70,18 @@ export default function ServicesSummary() {
 type ServiceSummaryProps = {
   title: string;
   blurb: ReactElement;
+  id: string;
   href: string;
 };
 
-function ServiceSummary({ title, blurb, href }: ServiceSummaryProps) {
+function ServiceSummary({ title, blurb, href, id }: ServiceSummaryProps) {
   return (
     <div className="lg:text-center">
       <Link
         href={href}
         showAnchorIcon
         className="text-2xl pb-4 text-secondary"
+        id={id}
       >
         {title}
       </Link>

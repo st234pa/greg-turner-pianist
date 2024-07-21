@@ -310,6 +310,7 @@ export default function IndexPage() {
               setSubmitState('invalid');
             }
           }}
+          id="submit-attempt"
           isLoading={submitting}
         >
           Submit
@@ -380,6 +381,7 @@ export default function IndexPage() {
                 <Button
                   color="primary"
                   radius="full"
+                  id="submit-confirmation"
                   onPress={() => {
                     onSubmit();
                     onClose();
