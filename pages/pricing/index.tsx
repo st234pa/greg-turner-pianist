@@ -189,6 +189,7 @@ export default function IndexPage() {
                 key={duration}
                 shouldSelectOnPressUp
                 title={`${duration} min`}
+                id={`pricing-tab-${duration}`}
               />
             ))}
           </Tabs>
@@ -214,6 +215,7 @@ export default function IndexPage() {
                   onPress={() => {
                     setSelectedSubscription(subscription);
                   }}
+                  id={`pricing-card-${subscription.tag}`}
                 >
                   <CardHeader>
                     <h1>{subscription.title}</h1>
