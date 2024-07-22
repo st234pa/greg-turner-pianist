@@ -405,7 +405,12 @@ export default function IndexPage() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Oops!</ModalHeader>
+              <ModalHeader
+                className="flex flex-col gap-1"
+                id="submit-attempt-error"
+              >
+                Oops!
+              </ModalHeader>
               <ModalBody>Something went wrong. Please try again.</ModalBody>
               <ModalFooter>
                 <Button
