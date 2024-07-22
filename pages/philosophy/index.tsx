@@ -5,12 +5,8 @@ import { Accordion, AccordionItem, Link } from "@nextui-org/react";
 export default function IndexPage() {
   const philosophyContent = [
     {
-      title: (
-        <span id="philosophy-love-for-music">
-          Piano lessons should develop a students love for music
-        </span>
-      ),
-
+      title: "Piano lessons should develop a students love for music",
+      id: "philosophy-love-for-music",
       content: (
         <div>
           <p className="pb-2">
@@ -24,12 +20,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-personal-growth">
-          Music is a path to personal growth
-        </span>
-      ),
-
+      title: "Music is a path to personal growth",
+      id: "philosophy-personal-growth",
       content: (
         <div>
           <p className="pb-2">
@@ -44,9 +36,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-connection">Music is a path to connection</span>
-      ),
+      title: "Music is a path to connection",
+      id: "philosophy-connection",
       content: (
         <div>
           <p className="pb-2">
@@ -64,11 +55,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-high-support">
-          A highly supportive environment is essential
-        </span>
-      ),
+      title: "A highly supportive environment is essential",
+      id: "philosophy-high-support",
       content: (
         <div>
           <p className="pb-2">
@@ -85,11 +73,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-high-standards">
-          Students should be held to the highest standard they can be
-        </span>
-      ),
+      title: "Students should be held to the highest standard they can be",
+      id: "philosophy-high-standards",
       content: (
         <div>
           <p className="pb-2">
@@ -107,11 +92,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-practice-is-art">
-          Practicing is an art that needs to be perfected
-        </span>
-      ),
+      title: "Practicing is an art that needs to be perfected",
+      id: "philosophy-practice-is-art",
       content: (
         <div>
           <p className="pb-2">
@@ -141,11 +123,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-expertise-takes-years">
-          Piano expertise takes years to develop
-        </span>
-      ),
+      title: "Piano expertise takes years to develop",
+      id: "philosophy-expertise-takes-years",
       content: (
         <div>
           <p className="pb-2">
@@ -167,11 +146,8 @@ export default function IndexPage() {
   ];
   const lessonStructureContent = [
     {
-      title: (
-        <span id="philosophy-curriculum-practice-strategies">
-          Refinement of Practice Strategies
-        </span>
-      ),
+      title: "Refinement of Practice Strategies",
+      id: "philosophy-curriculum-practice-strategies",
       content: (
         <div>
           <p className="pb-2">
@@ -191,13 +167,12 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-curriculum-technique">Technique Training</span>
-      ),
+      title: "Technique Training",
+      id: "philosophy-curriculum-technique",
       content: (
         <div>
           <p className="pb-2">
-            I've studied healthy and efficient piano techniques with some of the
+            I’ve studied healthy and efficient piano techniques with some of the
             world's greatest teachers at Juilliard and Eastman. I strive to pass
             this knowledge to my students in an understandable way, ensuring
             they can play at a high level without injury for life.
@@ -213,11 +188,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: (
-        <span id="philosophy-curriculum-repertoire">
-          Carefully Selected Repertoire
-        </span>
-      ),
+      title: "Carefully Selected Repertoire",
+      id: "philosophy-curriculum-repertoire",
       content: (
         <div>
           <p className="pb-2">
@@ -247,7 +219,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: <span id="philosophy-curriculum-theory">Music Theory</span>,
+      title: "Music Theory",
+      id: "philosophy-curriculum-theory",
       content: (
         <div>
           <p className="pb-2">
@@ -274,7 +247,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: <span id="philosophy-curriculum-history">Music History</span>,
+      title: "Music History",
+      id: "philosophy-curriculum-history",
       content: (
         <div>
           <p className="pb-2">
@@ -300,7 +274,8 @@ export default function IndexPage() {
       ),
     },
     {
-      title: <span id="philosophy-curriculum-ear-training">Ear Training</span>,
+      title: "Ear Training",
+      id: "philosophy-curriculum-ear-training",
       content: (
         <div>
           <p className="pb-2">
@@ -322,8 +297,14 @@ export default function IndexPage() {
           selectionMode="multiple"
         >
           {philosophyContent.map((item, index) => (
-            <AccordionItem key={index} title={item.title}>
-              <div className="font-light">{item.content}</div>
+            <AccordionItem
+              key={index}
+              aria-label={item.title}
+              title={item.title}
+            >
+              <div className="font-light" id={item.id}>
+                {item.content}
+              </div>
             </AccordionItem>
           ))}
         </Accordion>
@@ -334,8 +315,14 @@ export default function IndexPage() {
           itemClasses={{ title: "text-md", content: "text-default-600" }}
         >
           {lessonStructureContent.map((item, index) => (
-            <AccordionItem key={index} title={item.title}>
-              <div className="font-light">{item.content}</div>
+            <AccordionItem
+              key={index}
+              aria-label={item.title}
+              title={item.title}
+            >
+              <div className="font-light" id={item.id}>
+                {item.content}
+              </div>
             </AccordionItem>
           ))}
         </Accordion>
