@@ -303,7 +303,10 @@ export default function IndexPage() {
               title={item.title}
               onPress={() => {
                 // @ts-ignore
-                dataLayer.push({ event: item.id });
+                dataLayer.push({
+                  event: "philosophy-item-clicked",
+                  value: item.id,
+                });
               }}
             >
               <div className="font-light">{item.content}</div>
