@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: 'Greg Turner Piano Studio',
-  description: 'In-home piano lessons in Lower Manhattan and Jersey City',
+  description: 'In-home piano lessons in Manhattan and Jersey City',
   navItems: [
     {
       label: 'About Me',

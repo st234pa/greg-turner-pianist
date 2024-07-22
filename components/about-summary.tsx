@@ -1,6 +1,6 @@
-import Section from '@/layouts/section';
-import { Button, Link } from '@nextui-org/react';
-import Image from 'next/image';
+import Section from "@/layouts/section";
+import { Button, Link } from "@nextui-org/react";
+import Image from "next/image";
 
 export default function AboutSummary() {
   return (
@@ -9,7 +9,7 @@ export default function AboutSummary() {
         <div className="about-summary-text">
           <div>
             <h1 className="text-4xl lg:text-5xl">
-              In-home piano lessons in Lower Manhattan and Jersey City
+              In-home piano lessons in Manhattan and Jersey City
             </h1>
             <p className="text-xl pt-6 pb-8 font-light">
               Hello! My name is Greg Turner. I received my Master's in Piano
