@@ -292,6 +292,10 @@ export default function IndexPage() {
           radius="full"
           fullWidth
           onPress={() => {
+            // @ts-ignore
+            dataLayer.push({
+              event: "submit-attempt",
+            });
             let isValidPhone = true;
             try {
               setPhone(parsePhoneNumber(phone, "US").formatNational());
@@ -326,7 +330,7 @@ export default function IndexPage() {
               <ModalHeader className="flex flex-col gap-1">
                 Invalid input
               </ModalHeader>
-              <ModalBody>
+              <ModalBody id="">
                 Please make sure all fields are populated correctly.
               </ModalBody>
               <ModalFooter>
