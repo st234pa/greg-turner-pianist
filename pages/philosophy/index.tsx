@@ -301,10 +301,12 @@ export default function IndexPage() {
               key={index}
               aria-label={item.title}
               title={item.title}
+              onPress={() => {
+                // @ts-ignore
+                dataLayer.push({ event: item.id });
+              }}
             >
-              <div className="font-light" id={item.id}>
-                {item.content}
-              </div>
+              <div className="font-light">{item.content}</div>
             </AccordionItem>
           ))}
         </Accordion>
@@ -320,9 +322,7 @@ export default function IndexPage() {
               aria-label={item.title}
               title={item.title}
             >
-              <div className="font-light" id={item.id}>
-                {item.content}
-              </div>
+              <div className="font-light">{item.content}</div>
             </AccordionItem>
           ))}
         </Accordion>
