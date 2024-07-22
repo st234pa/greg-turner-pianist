@@ -8,11 +8,11 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from '@nextui-org/react';
-import { siteConfig } from '@/config/site';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { WebsiteIcon } from './icons';
+} from "@nextui-org/react";
+import { siteConfig } from "@/config/site";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { WebsiteIcon } from "./icons";
 
 export const Navbar = () => {
   const currentNav = usePathname();
@@ -24,18 +24,12 @@ export const Navbar = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent
-        className="lg:hidden"
-        justify="start"
-      >
+      <NavbarContent className="lg:hidden" justify="start">
         <NavbarMenuToggle />
         <Brand />
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden lg:flex"
-        justify="center"
-      >
+      <NavbarContent className="hidden lg:flex" justify="center">
         <Brand />
       </NavbarContent>
 
@@ -56,10 +50,7 @@ export const Navbar = () => {
         ))}
       </NavbarContent>
 
-      <NavbarContent
-        justify="end"
-        className="hidden sm:flex"
-      >
+      <NavbarContent justify="end" className="hidden sm:flex">
         <NavbarItem>
           <Button
             color="primary"
@@ -112,9 +103,8 @@ const Brand = (props: BrandProps) => {
         color="foreground"
         size="lg"
         className="pt-[3px]"
-        id="nav-home"
       >
-        <WebsiteIcon />
+        <WebsiteIcon id="nav-home" />
       </Link>
     </NavbarBrand>
   );
@@ -131,7 +121,7 @@ type NavLinkProps = {
 const NavLink = (props: NavLinkProps) => {
   return (
     <Link
-      color={props.currentNav === props.href ? 'secondary' : 'foreground'}
+      color={props.currentNav === props.href ? "secondary" : "foreground"}
       href={props.href}
       onPress={() => props.setIsMenuOpen(false)}
       id={props.id}
