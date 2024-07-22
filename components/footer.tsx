@@ -43,6 +43,7 @@ export default function Footer() {
               href="https://instagram.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
+              id="footer-instagram"
             >
               <InstagramIcon id="footer-instagram" />
             </Link>
@@ -50,6 +51,7 @@ export default function Footer() {
               href="https://www.facebook.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
+              id="footer-facebook"
             >
               <FacebookIcon id="footer-facebook" />
             </Link>
@@ -57,6 +59,7 @@ export default function Footer() {
               href="https://www.youtube.com/@gregturnerpianist"
               target="_blank"
               color="foreground"
+              id="footer-youtube"
             >
               <YoutubeIcon id="footer-youtube" />
             </Link>
