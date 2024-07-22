@@ -43,25 +43,22 @@ export default function Footer() {
               href="https://instagram.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
-              id="footer-instagram"
             >
-              <InstagramIcon />
+              <InstagramIcon id="footer-instagram" />
             </Link>
             <Link
               href="https://www.facebook.com/gregturnerpianostudio"
               target="_blank"
               color="foreground"
-              id="footer-facebook"
             >
-              <FacebookIcon />
+              <FacebookIcon id="footer-facebook" />
             </Link>
             <Link
               href="https://www.youtube.com/@gregturnerpianist"
               target="_blank"
               color="foreground"
-              id="footer-youtube"
             >
-              <YoutubeIcon />
+              <YoutubeIcon id="footer-youtube" />
             </Link>
           </div>
         </div>
