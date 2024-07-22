@@ -1,12 +1,16 @@
-import DefaultLayout from '@/layouts/default';
-import Section from '@/layouts/section';
-import { Accordion, AccordionItem, Link } from '@nextui-org/react';
+import DefaultLayout from "@/layouts/default";
+import Section from "@/layouts/section";
+import { Accordion, AccordionItem, Link } from "@nextui-org/react";
 
 export default function IndexPage() {
   const philosophyContent = [
     {
-      title: 'Piano lessons should develop a students love for music',
-      id: 'philosophy-love-for-music',
+      title: (
+        <span id="philosophy-love-for-music">
+          Piano lessons should develop a students love for music
+        </span>
+      ),
+
       content: (
         <div>
           <p className="pb-2">
@@ -20,8 +24,12 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music is a path to personal growth',
-      id: 'philosophy-personal-growth',
+      title: (
+        <span id="philosophy-personal-growth">
+          Music is a path to personal growth
+        </span>
+      ),
+
       content: (
         <div>
           <p className="pb-2">
@@ -36,8 +44,9 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music is a path to connection',
-      id: 'philosophy-connection',
+      title: (
+        <span id="philosophy-connection">Music is a path to connection</span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -55,8 +64,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'A highly supportive environment is essential',
-      id: 'philosophy-high-support',
+      title: (
+        <span id="philosophy-high-support">
+          A highly supportive environment is essential
+        </span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -73,8 +85,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Students should be held to the highest standard they can be',
-      id: 'philosophy-high-standards',
+      title: (
+        <span id="philosophy-high-standards">
+          Students should be held to the highest standard they can be
+        </span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -92,8 +107,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Practicing is an art that needs to be perfected',
-      id: 'philosophy-practice-is-art',
+      title: (
+        <span id="philosophy-practice-is-art">
+          Practicing is an art that needs to be perfected
+        </span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -123,8 +141,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Piano expertise takes years to develop',
-      id: 'philosophy-expertise-takes-years',
+      title: (
+        <span id="philosophy-expertise-takes-years">
+          Piano expertise takes years to develop
+        </span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -146,8 +167,11 @@ export default function IndexPage() {
   ];
   const lessonStructureContent = [
     {
-      title: 'Refinement of Practice Strategies',
-      id: 'philosophy-curriculum-practice-strategies',
+      title: (
+        <span id="philosophy-curriculum-practice-strategies">
+          Refinement of Practice Strategies
+        </span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -167,12 +191,13 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Technique Training',
-      id: 'philosophy-curriculum-technique',
+      title: (
+        <span id="philosophy-curriculum-technique">Technique Training</span>
+      ),
       content: (
         <div>
           <p className="pb-2">
-            I’ve studied healthy and efficient piano techniques with some of the
+            I've studied healthy and efficient piano techniques with some of the
             world's greatest teachers at Juilliard and Eastman. I strive to pass
             this knowledge to my students in an understandable way, ensuring
             they can play at a high level without injury for life.
@@ -188,8 +213,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Carefully Selected Repertoire',
-      id: 'philosophy-curriculum-repertoire',
+      title: (
+        <span id="philosophy-curriculum-repertoire">
+          Carefully Selected Repertoire
+        </span>
+      ),
       content: (
         <div>
           <p className="pb-2">
@@ -202,7 +230,7 @@ export default function IndexPage() {
           <p className="pb-2">
             I've created a personal collection of over 50 pieces for beginner to
             advanced students, each annotated and ordered by level. I use this
-            along with the proven{' '}
+            along with the proven{" "}
             <Link
               className="font-normal"
               color="secondary"
@@ -210,7 +238,7 @@ export default function IndexPage() {
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
+            </Link>{" "}
             curriculum. When students are ready for a new piece, I offer them
             multiple options to choose from, giving them ownership and
             motivation to practice.
@@ -219,8 +247,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music Theory',
-      id: 'philosophy-curriculum-theory',
+      title: <span id="philosophy-curriculum-theory">Music Theory</span>,
       content: (
         <div>
           <p className="pb-2">
@@ -230,7 +257,7 @@ export default function IndexPage() {
             analytical skills.
           </p>
           <p className="pb-2">
-            I use the{' '}
+            I use the{" "}
             <Link
               className="font-normal"
               color="secondary"
@@ -238,7 +265,7 @@ export default function IndexPage() {
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
+            </Link>{" "}
             curriculum for music theory. This well established curriculum brings
             students beyond an undergraduate level of music theory by the end of
             the program.
@@ -247,8 +274,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Music History',
-      id: 'philosophy-curriculum-history',
+      title: <span id="philosophy-curriculum-history">Music History</span>,
       content: (
         <div>
           <p className="pb-2">
@@ -257,7 +283,7 @@ export default function IndexPage() {
             students connect more personally with the pieces they play.
           </p>
           <p className="pb-2">
-            For advanced students, I use the{' '}
+            For advanced students, I use the{" "}
             <Link
               className="font-normal"
               color="secondary"
@@ -265,7 +291,7 @@ export default function IndexPage() {
               href="https://www.rcmusic.com/"
             >
               RCM
-            </Link>{' '}
+            </Link>{" "}
             curriculum for music history. It is a well established curriculum
             that brings students beyond an undergraduate level history by the
             time they finish the program.
@@ -274,8 +300,7 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Ear Training',
-      id: 'philosophy-curriculum-ear-training',
+      title: <span id="philosophy-curriculum-ear-training">Ear Training</span>,
       content: (
         <div>
           <p className="pb-2">
@@ -290,22 +315,14 @@ export default function IndexPage() {
   ];
   return (
     <DefaultLayout>
-      <Section
-        maxWidth="max-w-3xl"
-        isFirst
-      >
+      <Section maxWidth="max-w-3xl" isFirst>
         <h1 className="text-3xl sm:text-4xl pb-4">Teaching Philosophy</h1>
         <Accordion
-          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          itemClasses={{ title: "text-md", content: "text-default-600" }}
           selectionMode="multiple"
         >
           {philosophyContent.map((item, index) => (
-            <AccordionItem
-              key={index}
-              aria-label={item.title}
-              title={item.title}
-              id={item.id}
-            >
+            <AccordionItem key={index} title={item.title}>
               <div className="font-light">{item.content}</div>
             </AccordionItem>
           ))}
@@ -314,15 +331,10 @@ export default function IndexPage() {
         <Accordion
           id="curriculum"
           selectionMode="multiple"
-          itemClasses={{ title: 'text-md', content: 'text-default-600' }}
+          itemClasses={{ title: "text-md", content: "text-default-600" }}
         >
           {lessonStructureContent.map((item, index) => (
-            <AccordionItem
-              key={index}
-              aria-label={item.title}
-              title={item.title}
-              id={item.id}
-            >
+            <AccordionItem key={index} title={item.title}>
               <div className="font-light">{item.content}</div>
             </AccordionItem>
           ))}
