@@ -9,8 +9,8 @@ export default function AboutSummary() {
         <div className="about-summary-text">
           <div>
             <h1 className="text-4xl lg:text-5xl">
-              In-home piano lessons in Manhattan and Jersey City with a
-              Juilliard graduate
+              In-home piano lessons in Manhattan and Jersey City from Juilliard
+              graduate
             </h1>
             <ul className="text-lg pt-6 pb-8 font-light list-disc list-inside">
               <li>
