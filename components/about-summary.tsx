@@ -9,14 +9,25 @@ export default function AboutSummary() {
         <div className="about-summary-text">
           <div>
             <h1 className="text-4xl lg:text-5xl">
-              In-home piano lessons in Manhattan and Jersey City
+              In-home piano lessons in Manhattan and Jersey City with a
+              Juilliard graduate
             </h1>
-            <p className="text-xl pt-6 pb-8 font-light">
-              Hello! My name is Greg Turner. I received my Master's in Piano
-              Performance from <span className="font-bold">Juilliard</span> and
-              I offer in-home private lessons to students of all levels and
-              ages.
-            </p>
+            <ul className="text-lg pt-6 pb-8 font-light list-disc list-inside">
+              <li>
+                The Juilliard School - Master of Music in Piano Performance
+              </li>
+              <li>The Juilliard School - Teaching Fellow of Secondary Piano</li>
+              <li>
+                Eastman School of Music - Bachelor of Music in Piano Performance
+              </li>
+              <li>
+                Kuleshov International Piano Competition - First Prize Winner
+              </li>
+              <li>
+                Thousand Islands International Piano Competition - Third Prize
+                Winner
+              </li>
+            </ul>
             <Button
               color="primary"
               variant="shadow"

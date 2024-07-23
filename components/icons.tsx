@@ -119,8 +119,8 @@ export const WebsiteIcon: React.FC<IconSvgProps> = ({
   return (
     <svg
       id={props.id}
-      width={200}
-      height={(220 * 1254) / 14699}
+      width={230}
+      height={(230 * 1254) / 14699}
       viewBox="0 0 1847 165"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
