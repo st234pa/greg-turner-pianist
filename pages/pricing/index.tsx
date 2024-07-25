@@ -1,5 +1,5 @@
-import DefaultLayout from '@/layouts/default';
-import Section from '@/layouts/section';
+import DefaultLayout from "@/layouts/default";
+import Section from "@/layouts/section";
 import {
   Tab,
   Tabs,
@@ -14,15 +14,15 @@ import {
   Button,
   ModalFooter,
   Link,
-} from '@nextui-org/react';
-import { ReactElement, useState } from 'react';
+} from "@nextui-org/react";
+import { ReactElement, useState } from "react";
 
 type Subscription = {
   title: string;
   tag: string;
-  '60': number;
-  '45': number;
-  '30': number;
+  "60": number;
+  "45": number;
+  "30": number;
   highlight?: boolean;
   details: ReactElement;
 };
@@ -35,11 +35,11 @@ export default function IndexPage() {
 
   const subscriptions = [
     {
-      title: 'Single Lesson',
-      tag: 'single-package',
-      '60': 100,
-      '45': 79,
-      '30': 55,
+      title: "Single Lesson",
+      tag: "single-package",
+      "60": 100,
+      "45": 79,
+      "30": 55,
       details: (
         <ul className="list-disc">
           <li>
@@ -67,11 +67,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Package of 5 Lessons',
-      tag: 'mid-level-package',
-      '60': 90,
-      '45': 72,
-      '30': 50,
+      title: "Package of 5 Lessons",
+      tag: "mid-level-package",
+      "60": 90,
+      "45": 72,
+      "30": 50,
       details: (
         <ul className="list-disc">
           <li>This package offers five lessons.</li>
@@ -109,11 +109,11 @@ export default function IndexPage() {
       ),
     },
     {
-      title: 'Package of 15 Lessons',
-      tag: 'value-package',
-      '60': 80,
-      '45': 64,
-      '30': 45,
+      title: "Package of 15 Lessons",
+      tag: "value-package",
+      "60": 80,
+      "45": 64,
+      "30": 45,
       details: (
         <ul className="list-disc">
           <li>This package offers 15 lessons.</li>
@@ -156,10 +156,7 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
-      <Section
-        isFirst
-        maxWidth="max-w-3xl"
-      >
+      <Section isFirst maxWidth="max-w-3xl">
         <h1 className="text-3xl sm:text-4xl pb-4">Pricing</h1>
         <div className="pb-6 pl-4">
           <ul className="list-disc">
@@ -196,21 +193,18 @@ export default function IndexPage() {
         </div>
         <div className="pt-6 sm:pt-2 flex flex-col-reverse sm:grid sm:grid-cols-3 gap-3 justify-center items-end">
           {subscriptions.map((subscription) => (
-            <div
-              key={subscription.title}
-              className="w-full"
-            >
+            <div key={subscription.title} className="w-full">
               {subscription.highlight && (
                 <div className="text-sm font-bold uppercase pb-1 text-right text-yellow-600">
                   Best Value!
                 </div>
               )}
               <div
-                className={`w-full rounded-2xl p-2 ${subscription.highlight ? 'border-yellow-600 border-2 ' : ''}`}
+                className={`w-full rounded-2xl p-2 ${subscription.highlight ? "border-yellow-600 border-2 " : ""}`}
               >
                 <Card
                   shadow="sm"
-                  className={`w-full sm:${subscription.highlight ? '' : 'mb-[2px]'}`}
+                  className={`w-full sm:${subscription.highlight ? "" : "mb-[2px]"}`}
                   isPressable
                   onPress={() => {
                     setSelectedSubscription(subscription);
@@ -218,7 +212,7 @@ export default function IndexPage() {
                   id={`pricing-card-${subscription.tag}`}
                 >
                   <CardHeader>
-                    <h1>{subscription.title}</h1>
+                    <div>{subscription.title}</div>
                   </CardHeader>
                   <CardBody>
                     <span className="flex items-center justify-center">
@@ -226,7 +220,7 @@ export default function IndexPage() {
                         $
                         {
                           subscription[
-                            selectedDuration.toString() as '30' | '45' | '60'
+                            selectedDuration.toString() as "30" | "45" | "60"
                           ]
                         }
                       </span>
@@ -254,14 +248,14 @@ export default function IndexPage() {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                <h1>{selectedSubscription?.title}</h1>
+                <div>{selectedSubscription?.title}</div>
                 <p className="text-sm font-normal">
                   $
                   {selectedSubscription
                     ? selectedSubscription[
-                        selectedDuration.toString() as '30' | '45' | '60'
+                        selectedDuration.toString() as "30" | "45" | "60"
                       ]
-                    : ''}{' '}
+                    : ""}{" "}
                   for each {selectedDuration}-minute lesson
                 </p>
               </ModalHeader>
@@ -269,11 +263,7 @@ export default function IndexPage() {
                 <div className="px-4">{selectedSubscription?.details}</div>
               </ModalBody>
               <ModalFooter>
-                <Button
-                  color="danger"
-                  variant="light"
-                  onPress={onClose}
-                >
+                <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
                 <Button

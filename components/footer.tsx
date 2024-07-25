@@ -8,11 +8,11 @@ export default function Footer() {
     <Section>
       <Divider className="mt-4" />
       <div className="w-full pt-4 lg:px-24 md:flex md:flex-row items-center gap-4 ">
-        <h1 className="pb-3 sm:pb-0 text-2xl font-semibold flex-grow">
+        <div className="pb-3 sm:pb-0 text-2xl font-semibold flex-grow">
           <Link href="/" color="foreground" size="lg">
             <WebsiteIcon id="footer-home" />
           </Link>
-        </h1>
+        </div>
         <div className="text-sm pb-4 sm:pb-0 md:pr-12">
           <h2 className="uppercase text-default-500 text-tiny pb-1">Contact</h2>
           <p className="pb-1">
@@ -95,7 +95,7 @@ export default function Footer() {
       </div>
       <Divider className="mt-4" />
       <div className="w-full pt-4 pb-2 text-tiny uppercase text-default-500">
-        Last updated July 18, 2024.
+        Last updated July 25, 2024.
       </div>
       <div className="w-full pb-2 text-tiny text-default-500">
         This site is protected by reCAPTCHA and the Google{" "}

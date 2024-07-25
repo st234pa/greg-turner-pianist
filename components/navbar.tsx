@@ -37,17 +37,19 @@ export const Navbar = () => {
         className="hidden w-full lg:gap-12 lg:flex"
         justify="center"
       >
-        {siteConfig.navItems.map((item) => (
-          <NavbarItem key={item.href}>
-            <NavLink
-              setIsMenuOpen={setIsMenuOpen}
-              currentNav={currentNav}
-              href={item.href}
-              label={item.label}
-              id={`nav-${item.id}`}
-            />
-          </NavbarItem>
-        ))}
+        {siteConfig.navItems
+          .filter((item) => !!item.label)
+          .map((item) => (
+            <NavbarItem key={item.href}>
+              <NavLink
+                setIsMenuOpen={setIsMenuOpen}
+                currentNav={currentNav}
+                href={item.href}
+                label={item.label}
+                id={`nav-${item.id}`}
+              />
+            </NavbarItem>
+          ))}
       </NavbarContent>
 
       <NavbarContent justify="end" className="hidden sm:flex">
@@ -65,17 +67,19 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {siteConfig.navItems.map((item) => (
-          <NavbarMenuItem key={item.href}>
-            <NavLink
-              setIsMenuOpen={setIsMenuOpen}
-              currentNav={currentNav}
-              href={item.href}
-              label={item.label}
-              id={`nav-${item.id}`}
-            />
-          </NavbarMenuItem>
-        ))}
+        {siteConfig.navItems
+          .filter((item) => !!item.label)
+          .map((item) => (
+            <NavbarMenuItem key={item.href}>
+              <NavLink
+                setIsMenuOpen={setIsMenuOpen}
+                currentNav={currentNav}
+                href={item.href}
+                label={item.label}
+                id={`nav-${item.id}`}
+              />
+            </NavbarMenuItem>
+          ))}
         <NavbarMenuItem className="sm:hidden">
           <NavLink
             setIsMenuOpen={setIsMenuOpen}

@@ -126,7 +126,7 @@ export default function IndexPage() {
       <DefaultLayout>
         <Section maxWidth="max-w-4xl" isFirst>
           <div className="w-full pb-8" id="submit-success">
-            <h1 className="text-2xl pb-2">Thank you!</h1>
+            <div className="text-2xl pb-2">Thank you!</div>
             Your response has been submitted. I'll get back to you within 24-48
             hours.
           </div>

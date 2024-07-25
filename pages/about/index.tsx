@@ -7,7 +7,7 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <Section maxWidth="max-w-3xl" isFirst>
-        <div className="text-3xl sm:text-4xl pb-4">About Me</div>
+        <h1 className="text-3xl sm:text-4xl pb-4">About Me</h1>
         <div className="md:grid md:grid-cols-5 md:gap-6 pb-5">
           <div className="h-full md:col-span-2 md:flex md:flex-col">
             <div className="md:flex-grow">
