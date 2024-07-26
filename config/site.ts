@@ -6,7 +6,7 @@ export const siteConfig = {
     {
       name: 'Piano Lessons NYC Manhattan for Kids and Adults',
       description: 'Get in home lessons with an award winning Juilliard graduate pianist. All ages and abilities welcome!',
-      label: '',
+      label: 'Home',
       id: 'home',
       href: '/'
     },
@@ -34,7 +34,7 @@ export const siteConfig = {
     {
       name: 'Request a Free Trial Lesson | Greg Turner Piano Studio',
       description: 'Request a free trial lesson with Greg Turner!',
-      label: '',
+      label: 'Request a FREE Trial Lesson',
       id: 'contact',
       href: '/contact',
     }

@@ -38,7 +38,7 @@ export const Navbar = () => {
         justify="center"
       >
         {siteConfig.navItems
-          .filter((item) => !!item.label)
+          .filter((item) => !["home", "contact"].includes(item.id))
           .map((item) => (
             <NavbarItem key={item.href}>
               <NavLink
@@ -68,7 +68,7 @@ export const Navbar = () => {
 
       <NavbarMenu>
         {siteConfig.navItems
-          .filter((item) => !!item.label)
+          .filter((item) => !["home", "contact"].includes(item.id))
           .map((item) => (
             <NavbarMenuItem key={item.href}>
               <NavLink

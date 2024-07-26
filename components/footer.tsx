@@ -66,31 +66,22 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-sm gap-1 flex flex-col">
-          <h2 className="uppercase text-default-500 text-tiny pb-1">
+          <div className="uppercase text-default-500 text-tiny pb-1">
             Navigation
-          </h2>
-          {siteConfig.navItems.map((navItem) => (
-            <div key={navItem.href}>
+          </div>
+          {siteConfig.navItems
+            .filter((navItem) => "home" !== navItem.id)
+            .map((navItem) => (
               <Link
                 href={navItem.href}
+                key={navItem.href}
                 size="sm"
                 color="foreground"
                 id={`footer-${navItem.id}`}
               >
                 {navItem.label}
               </Link>
-            </div>
-          ))}
-          <div>
-            <Link
-              href={"/contact"}
-              size="sm"
-              color="foreground"
-              id="contact-footer"
-            >
-              Request a FREE Trial Lesson
-            </Link>
-          </div>
+            ))}
         </div>
       </div>
       <Divider className="mt-4" />
