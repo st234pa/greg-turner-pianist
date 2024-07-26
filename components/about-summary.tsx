@@ -11,9 +11,9 @@ export default function AboutSummary() {
             <h1 className="text-4xl lg:text-5xl">
               Piano Lessons in Manhattan, NYC
             </h1>
-            <h2 className="text-3xl lg:text-4xl pt-2">
+            <div className="text-3xl lg:text-4xl pt-2">
               In-home lessons from award-winning Juilliard graduate
-            </h2>
+            </div>
             <ul className="text-lg pt-6 pb-8 font-light list-disc list-inside">
               <li>
                 The Juilliard School - Master of Music in Piano Performance

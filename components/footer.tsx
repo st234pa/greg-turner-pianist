@@ -14,7 +14,9 @@ export default function Footer() {
           </Link>
         </div>
         <div className="text-sm pb-4 sm:pb-0 md:pr-12">
-          <h2 className="uppercase text-default-500 text-tiny pb-1">Contact</h2>
+          <div className="uppercase text-default-500 text-tiny pb-1">
+            Contact
+          </div>
           <p className="pb-1">
             <Link
               size="sm"
@@ -37,7 +39,9 @@ export default function Footer() {
               (646)-580-9160
             </Link>
           </p>
-          <h2 className="uppercase text-default-500 text-tiny pt-4">Follow</h2>
+          <div className="uppercase text-default-500 text-tiny pt-4">
+            Follow
+          </div>
           <div className="w-full flex pt-2 items-center gap-4">
             <Link
               href="https://instagram.com/gregturnerpianostudio"
