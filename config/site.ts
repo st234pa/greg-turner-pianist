@@ -37,6 +37,13 @@ export const siteConfig = {
       label: 'Request a FREE Trial Lesson',
       id: 'contact',
       href: '/contact',
+    },
+    {
+      name: 'Greg\'s blog | Greg Turner Piano Studio',
+      description: 'Greg Turner\'s blog! Subscribe for high quality content about all things piano.',
+      label: 'Blog',
+      id: 'blog',
+      href: '/blog',
     }
   ],
 };

@@ -74,7 +74,7 @@ export default function Footer() {
             Navigation
           </div>
           {siteConfig.navItems
-            .filter((navItem) => "home" !== navItem.id)
+            .filter((item) => !["home", "blog"].includes(item.id))
             .map((navItem) => (
               <Link
                 href={navItem.href}
