@@ -9,7 +9,7 @@ export default function AboutSummary() {
         <div className="about-summary-text">
           <div>
             <h1 className="text-4xl lg:text-5xl">
-              Piano Lessons in Manhattan, NYC
+              Piano Lessons in Jersey City
             </h1>
             <div className="text-3xl lg:text-4xl pt-2">
               In-home lessons from award-winning Juilliard graduate

@@ -4,7 +4,7 @@ export const siteConfig = {
   
   navItems: [
     {
-      name: 'Piano Lessons NYC Manhattan for Kids and Adults',
+      name: 'Piano Lessons Jersey City for Kids and Adults',
       description: 'Get in home lessons with an award winning Juilliard graduate pianist. All ages and abilities welcome!',
       label: 'Home',
       id: 'home',
