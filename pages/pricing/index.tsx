@@ -247,11 +247,17 @@ export default function IndexPage() {
           >
             PianoPiano Studios
           </Link>{" "}
-          in the Upper West Side. Because lesson scheduling will be dependent on
-          availability of studio space, a weekly time and place can not be 100%
-          guaranteed. However, I will do my best to schedule a consistent time
-          and place.
+          in the Upper West Side, but the scheduling and cancellation policy for
+          these lessons is more restrictive because of the strict cancellation
+          policies of these spaces.
         </div>
+
+        <div className="text-sm font-light text-default-500 pt-5">
+          I will do my best to schedule a consistent time and place, but because
+          lesson scheduling will be dependent on availability of studio space, a
+          weekly time and place can not be 100% guaranteed.
+        </div>
+
         <div className="text-sm font-light text-default-500 pt-5">
           A non-refundable scheduling fee will be added onto lessons taken at
           local studios. This covers the booking fee for the studio and time
@@ -259,9 +265,8 @@ export default function IndexPage() {
           lesson payment is due.
         </div>
         <div className="text-sm font-light text-default-500 pt-5">
-          Given the strict cancellation policies of these spaces, a rescheduling
-          request must be submitted at least seven days in advance for local
-          studio lessons and a rescheduling fee will apply.
+          A rescheduling request must be submitted at least seven days in
+          advance for local studio lessons and a rescheduling fee will apply.
         </div>
       </Section>
       <Modal
