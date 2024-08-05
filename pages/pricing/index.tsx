@@ -237,6 +237,27 @@ export default function IndexPage() {
             </div>
           ))}
         </div>
+        <div className="text-sm font-light text-default-500 pt-10">
+          Lessons may also be taken at local piano studios, such as{" "}
+          <Link
+            className="text-sm"
+            color="secondary"
+            target="_blank"
+            href="https://www.pianopianostudios.com/"
+          >
+            PianoPiano Studios
+          </Link>{" "}
+          in the Upper West Side. Because lesson scheduling will be dependent on
+          availability of studio space, a weekly time and place can not be 100%
+          guaranteed. However, I will do my best to schedule the most consistent
+          time and place possible.
+        </div>
+        <div className="text-sm font-light text-default-500 pt-5">
+          A scheduling fee of around $20-30 per lesson (depending on duration
+          and location) will be added onto lessons taken at local studios. This
+          covers the booking fee for the studio and time spent scheduling these
+          spaces. This fee is due a week before the lesson payment is due.
+        </div>
       </Section>
       <Modal
         scrollBehavior="inside"
