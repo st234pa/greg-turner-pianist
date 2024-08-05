@@ -253,10 +253,10 @@ export default function IndexPage() {
           time and place possible.
         </div>
         <div className="text-sm font-light text-default-500 pt-5">
-          A scheduling fee of around $20-30 per lesson (depending on duration
-          and location) will be added onto lessons taken at local studios. This
-          covers the booking fee for the studio and time spent scheduling these
-          spaces. This fee is due a week before the lesson payment is due.
+          A scheduling fee will be added onto lessons taken at local studios.
+          This covers the booking fee for the studio and time spent scheduling
+          these spaces. This fee is due 10 days before the lesson payment is
+          due.
         </div>
       </Section>
       <Modal
