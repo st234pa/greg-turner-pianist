@@ -1,5 +1,5 @@
-import DefaultLayout from "@/layouts/default";
-import Section from "@/layouts/section";
+import DefaultLayout from '@/layouts/default';
+import Section from '@/layouts/section';
 import {
   CheckboxGroup,
   Checkbox,
@@ -7,49 +7,49 @@ import {
   Textarea,
   Button,
   Link,
-} from "@nextui-org/react";
-import { useEffect, useRef, useState } from "react";
+} from '@nextui-org/react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from "@nextui-org/modal";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+} from '@nextui-org/modal';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import {
   AsYouType,
   isValidPhoneNumber,
   parsePhoneNumber,
-} from "libphonenumber-js";
-import debounce from "lodash.debounce";
+} from 'libphonenumber-js';
+import debounce from 'lodash.debounce';
 
 const daysOfWeek = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
 ];
 
 const timeSlots = [
-  "Morning (~9am-12pm)",
-  "Early afternoon (~12pm-3pm)",
-  "Late afternoon (~3pm-5pm)",
-  "Evening (~5pm-8pm)",
+  'Morning (~9am-12pm)',
+  'Early afternoon (~12pm-3pm)',
+  'Late afternoon (~3pm-5pm)',
+  'Evening (~5pm-8pm)',
 ];
 
 export default function IndexPage() {
   const [selectedTimeSlots, setSelectedTimeSlots] = useState<
     Map<string, string[]>
   >(new Map());
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [name, setName] = useState("");
-  const [zip, setZip] = useState("");
-  const [notes, setNotes] = useState("");
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [name, setName] = useState('');
+  const [zip, setZip] = useState('');
+  const [notes, setNotes] = useState('');
 
   const [validationModalOpen, setValidationModalOpen] = useState(false);
   const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
@@ -57,16 +57,17 @@ export default function IndexPage() {
 
   const [submitState, setSubmitState] = useState<string | undefined>(undefined);
   const submitAttempted = submitState !== undefined;
-  const submitting = submitState === "inProgress";
+  const submitting = submitState === 'inProgress';
   const abortController = useRef(new AbortController());
 
   useEffect(() => {
-    return () => abortController.current.abort();
+    const abortSignal = abortController.current;
+    return () => abortSignal.abort();
   }, []);
 
   const debouncedFormatPhone = useRef(
     debounce((phoneInput) => {
-      setPhone(new AsYouType("US").input(phoneInput));
+      setPhone(new AsYouType('US').input(phoneInput));
     }, 1000)
   );
 
@@ -78,21 +79,21 @@ export default function IndexPage() {
     !!zip &&
     !!phone &&
     isValidEmail(email) &&
-    isValidPhoneNumber(phone, "US") &&
+    isValidPhoneNumber(phone, 'US') &&
     isValidZip(zip) &&
     isValidTimeslots(selectedTimeSlots);
 
   function onSubmit() {
     abortController.current.abort();
     abortController.current = new AbortController();
-    setSubmitState("inProgress");
+    setSubmitState('inProgress');
     setErrorModalOpen(false);
     const currentDate = new Date();
     executeRecaptcha &&
-      executeRecaptcha("submit")
+      executeRecaptcha('submit')
         .then((token: string) =>
-          fetch("/api/submit", {
-            method: "POST",
+          fetch('/api/submit', {
+            method: 'POST',
             body: JSON.stringify({
               date: getDate(currentDate),
               time: getTime(currentDate),
@@ -109,23 +110,28 @@ export default function IndexPage() {
         )
         .then(async (response) => {
           if (response.ok) {
-            setSubmitState("success");
+            setSubmitState('success');
           } else {
             throw new Error(await response.text());
           }
         })
-        .catch((e: Error) => {
-          console.log(e);
+        .catch(() => {
           setErrorModalOpen(true);
-          setSubmitState("error");
+          setSubmitState('error');
         });
   }
 
-  if (submitState === "success") {
+  if (submitState === 'success') {
     return (
       <DefaultLayout>
-        <Section maxWidth="max-w-4xl" isFirst>
-          <div className="w-full pb-8" id="submit-success">
+        <Section
+          maxWidth="max-w-4xl"
+          isFirst
+        >
+          <div
+            className="w-full pb-8"
+            id="submit-success"
+          >
             <div className="text-2xl pb-2">Thank you!</div>
             Your response has been submitted. I'll get back to you within 24-48
             hours.
@@ -137,7 +143,10 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
-      <Section maxWidth="max-w-3xl" isFirst>
+      <Section
+        maxWidth="max-w-3xl"
+        isFirst
+      >
         <div className="w-full pb-4">
           <h1 className="text-3xl sm:text-4xl pb-4">
             Request a FREE Trial Lesson
@@ -146,7 +155,7 @@ export default function IndexPage() {
             Please provide your contact information, location, and availability.
           </p>
           <p className="text-sm text-default-600 font-light">
-            You can also reach me at{" "}
+            You can also reach me at{' '}
             <Link
               size="sm"
               href="mailto:gregturnerpianostudio@gmail.com"
@@ -154,8 +163,8 @@ export default function IndexPage() {
               id="CTA-email"
             >
               gregturnerpianostudio@gmail.com
-            </Link>{" "}
-            or call or text me at{" "}
+            </Link>{' '}
+            or call or text me at{' '}
             <Link
               size="sm"
               href="sms:6465809160"
@@ -163,7 +172,7 @@ export default function IndexPage() {
               id="CTA-phone"
             >
               (646)-580-9160
-            </Link>{" "}
+            </Link>{' '}
             if you prefer! I will get back to you within 24-48 hours.
           </p>
         </div>
@@ -201,7 +210,7 @@ export default function IndexPage() {
               debouncedFormatPhone.current(phoneInput);
             }}
             value={phone}
-            isInvalid={submitAttempted && !isValidPhoneNumber(phone, "US")}
+            isInvalid={submitAttempted && !isValidPhoneNumber(phone, 'US')}
             errorMessage="Please enter a valid phone number"
             isDisabled={submitting}
           />
@@ -241,7 +250,10 @@ export default function IndexPage() {
           isDisabled={submitting}
         >
           {daysOfWeek.map((day) => (
-            <Checkbox key={day} value={day}>
+            <Checkbox
+              key={day}
+              value={day}
+            >
               {day}
             </Checkbox>
           ))}
@@ -273,7 +285,10 @@ export default function IndexPage() {
               isDisabled={submitting}
             >
               {timeSlots.map((timeSlot) => (
-                <Checkbox key={timeSlot} value={timeSlot}>
+                <Checkbox
+                  key={timeSlot}
+                  value={timeSlot}
+                >
                   {timeSlot}
                 </Checkbox>
               ))}
@@ -294,7 +309,7 @@ export default function IndexPage() {
           onPress={() => {
             let isValidPhone = true;
             try {
-              setPhone(parsePhoneNumber(phone, "US").formatNational());
+              setPhone(parsePhoneNumber(phone, 'US').formatNational());
             } catch {
               isValidPhone = false;
             }
@@ -303,11 +318,11 @@ export default function IndexPage() {
               setConfirmationModalOpen(true);
             } else if (!submitAttempted) {
               setValidationModalOpen(true);
-              setSubmitState("invalid");
+              setSubmitState('invalid');
             }
             // @ts-ignore
             dataLayer.push({
-              event: "submit-attempt",
+              event: 'submit-attempt',
             });
           }}
           isLoading={submitting}
@@ -459,8 +474,8 @@ function isValidTimeslots(selectedTimeSlots: Map<string, string[]>) {
 
 function getAvailability(selectedTimeslots: Map<string, string[]>) {
   return Array.from(selectedTimeslots.entries())
-    .map((entry) => `${entry[0].substring(0, 3)}: ${entry[1].join(", ")}`)
-    .join("\n");
+    .map((entry) => `${entry[0].substring(0, 3)}: ${entry[1].join(', ')}`)
+    .join('\n');
 }
 
 function getDate(currentDate: Date) {
