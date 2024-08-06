@@ -16,7 +16,7 @@ export default function Page() {
 
 function BlogPost() {
   const router = useRouter();
-  const [status, setStatus] = useState<number>(-1);
+  const [status, setStatus] = useState<number | undefined>(undefined);
   const [postData, setPostData] = useState<EntrySkeletonType | undefined>(
     undefined
   );
