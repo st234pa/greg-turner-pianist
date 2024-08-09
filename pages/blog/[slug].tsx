@@ -15,6 +15,24 @@ export default function Page() {
 }
 
 function BlogPost() {
+  const { postData, status } = useBlogPost();
+
+  if (status === undefined) {
+    return <>Loading</>;
+  }
+
+  if (status === 404) {
+    return <>Not found</>;
+  }
+
+  if (status === 400 || postData === undefined) {
+    return <>Something went wrong</>;
+  }
+
+  return <>{postData.fields.postBlurb.fields.title}</>;
+}
+
+function useBlogPost() {
   const router = useRouter();
   const [status, setStatus] = useState<number | undefined>(undefined);
   const [postData, setPostData] = useState<EntrySkeletonType | undefined>(
@@ -29,6 +47,8 @@ function BlogPost() {
 
   useEffect(() => {
     if (router.query.slug) {
+      abortController.current.abort();
+      abortController.current = new AbortController();
       fetch(`/api/post/${router.query.slug}`, {
         signal: abortController.current.signal,
       })
@@ -47,17 +67,5 @@ function BlogPost() {
     }
   }, [router.query.slug]);
 
-  if (status === undefined) {
-    return <>Loading</>;
-  }
-
-  if (status === 404) {
-    return <>Not found</>;
-  }
-
-  if (status === 400 || postData === undefined) {
-    return <>Something went wrong</>;
-  }
-
-  return <>{postData.fields.title}</>;
+  return { postData, status };
 }

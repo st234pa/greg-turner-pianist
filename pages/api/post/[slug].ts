@@ -11,22 +11,27 @@ export default async function handler(
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
 
-  client
-    .getEntries({
-      content_type: 'post',
-      limit: 1,
-      'fields.slug': slug,
-    })
-    .then((entryCollection) => {
-      if (entryCollection.errors && entryCollection.errors.length > 0) {
-        throw new Error();
-      }
-      if (entryCollection.items.length === 0) {
-        res.status(404).end();
-      }
-      res.status(200).json(entryCollection.items[0]);
-    })
-    .catch(() => {
-      res.status(400).end();
-    });
+  return new Promise<void>((resolve) => {
+    client
+      .getEntries({
+        content_type: 'post',
+        limit: 1,
+        'fields.slug': slug,
+      })
+      .then((entryCollection) => {
+        if (entryCollection.errors && entryCollection.errors.length > 0) {
+          throw new Error();
+        }
+        if (entryCollection.items.length === 0) {
+          res.status(404).end();
+        }
+        res.status(200).json(entryCollection.items[0]);
+      })
+      .catch(() => {
+        res.status(400).end();
+      })
+      .finally(() => {
+        resolve();
+      });
+  });
 }
